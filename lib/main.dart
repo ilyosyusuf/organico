@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
+import 'package:organico/config/routes/page_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,11 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Organico',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      navigatorKey: NavigationService.instance.navigatorKey,
+      initialRoute: '/',
+      onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }
 }
