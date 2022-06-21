@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:organico/core/constants/colors/color_const.dart';
 
 class MyTextField {
   static textField({
@@ -29,24 +30,24 @@ class MyTextField {
           // fillColor: ColorConst.formFieldColor,
           filled: true,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            // borderSide: const BorderSide(color: ColorConst.kPrimaryColor),
+            borderRadius: BorderRadius.circular(35.0),
+            borderSide: const BorderSide(color: ColorConst.mainColor),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            // borderSide: BorderSide(color: ColorConst.blackfortext),
+            borderRadius: BorderRadius.circular(35.0),
+            borderSide: BorderSide(color: ColorConst.mainColor),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            // borderSide: BorderSide(color: ColorConst.blackfortext),
+            borderRadius: BorderRadius.circular(35.0),
+            borderSide: BorderSide(color: ColorConst.kPrimaryColor),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            // borderSide:  BorderSide(color: ColorConst.kPrimaryColor),
+            borderRadius: BorderRadius.circular(35.0),
+            borderSide:  BorderSide(color: ColorConst.kPrimaryColor),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: BorderRadius.circular(35.0),
           ),
         ),
         validator: validator);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/widgets/buttons/elevated_button_style.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
@@ -8,7 +9,7 @@ class ElevatedButtonWidget extends StatelessWidget {
   final double width;
   final Color backgroundColor;
   final Color borderColor;
-  const ElevatedButtonWidget({this.backgroundColor = Colors.red,this.borderColor = Colors.transparent, required this.child,this.height = 30, required this.onPressed,this.width = 360,Key? key}) : super(key: key);
+  const ElevatedButtonWidget({this.backgroundColor = ColorConst.kPrimaryColor,this.borderColor = Colors.transparent, required this.child,this.height = 30, required this.onPressed,this.width = 360,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

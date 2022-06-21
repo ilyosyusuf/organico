@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/config/routes/page_routes.dart';
+import 'package:organico/config/themes/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Organico',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.instance.appLightTheme,
       navigatorKey: NavigationService.instance.navigatorKey,
       initialRoute: '/mainauthview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,

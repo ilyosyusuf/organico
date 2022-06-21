@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/authentication/cubit/auth_cubit.dart';
 import 'package:organico/screens/authentication/state/auth_state.dart';
+import 'package:organico/screens/authentication/view/pages/sign_in_view.dart';
+import 'package:organico/screens/authentication/view/pages/sign_up_view.dart';
 
 class MainAuthView extends StatelessWidget {
   const MainAuthView({Key? key}) : super(key: key);
@@ -23,9 +25,9 @@ class MainAuthView extends StatelessWidget {
           if (state is SplashState) {
             return Center(child: Text("Splash"));
           } else if (state is SignUpState) {
-            return Center(child: Text("Sign Up"));
+            return SignUpView();
           } else if (state is SignInState) {
-            return Center(child: Text("Sign In"));
+            return SignInView();
           } else if (state is ForgotPasswordState) {
             return Center(child: Text("Forgot Password"));
           } else {

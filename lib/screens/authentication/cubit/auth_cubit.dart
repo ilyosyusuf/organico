@@ -5,7 +5,7 @@ import 'package:organico/screens/authentication/state/auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(SignInState());
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   changeState(AuthState state) {
