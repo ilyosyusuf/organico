@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organico/screens/authentication/view/mainauthview/main_auth_view.dart';
 
 class MyRoute {
   static final MyRoute _instance = MyRoute._init();
@@ -8,8 +9,8 @@ class MyRoute {
   Route? onGenerateRoute(RouteSettings settings) {
     var args = settings.arguments;
     switch (settings.name) {
-      case '/':
-        return _pages();
+      case '/mainauthview':
+        return _pages(MainAuthView());
     }
   }
 

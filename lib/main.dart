@@ -12,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Organico',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/',
+      initialRoute: '/mainauthview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }
