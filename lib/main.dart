@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Organico',
-      theme: AppTheme.instance.appLightTheme,
+      theme: AppTheme.instance.appDarkTheme,
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/mainauthview',
+      initialRoute: '/splashview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }

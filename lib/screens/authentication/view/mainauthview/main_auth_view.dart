@@ -27,9 +27,7 @@ class MainAuthView extends StatelessWidget {
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: ((context, state) {}),
         builder: (context, state) {
-          if (state is SplashState) {
-            return Center(child: Text("Splash"));
-          } else if (state is SignUpState) {
+          if (state is SignUpState) {
             return SignUpView();
           } else if (state is SignInState) {
             return SignInView();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:organico/screens/authentication/view/mainauthview/main_auth_view.dart';
+import 'package:organico/screens/authentication/view/pages/splash_view.dart';
 
 class MyRoute {
   static final MyRoute _instance = MyRoute._init();
@@ -11,6 +12,8 @@ class MyRoute {
     switch (settings.name) {
       case '/mainauthview':
         return _pages(MainAuthView());
+            case '/splashview':
+        return _pages(SplashView());
     }
   }
 

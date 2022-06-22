@@ -2,10 +2,6 @@ abstract class AuthState {
   AuthState();
 }
 
-class SplashState extends AuthState {
-  SplashState();
-}
-
 class SignUpState extends AuthState {
   SignUpState();
 }
@@ -13,6 +9,7 @@ class SignUpState extends AuthState {
 class SignInState extends AuthState {
   SignInState();
 }
+
 class PhoneVerifyState extends AuthState {
   PhoneVerifyState();
 }
@@ -32,5 +29,3 @@ class ResetPasswordState extends AuthState {
 class ForgotPasswordState extends AuthState {
   ForgotPasswordState();
 }
-
-
