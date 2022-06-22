@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/authentication/cubit/auth_cubit.dart';
 import 'package:organico/screens/authentication/state/auth_state.dart';
+import 'package:organico/screens/authentication/view/pages/authorization_view.dart';
 import 'package:organico/screens/authentication/view/pages/forgot_password_view.dart';
 import 'package:organico/screens/authentication/view/pages/phone_verification.dart';
 import 'package:organico/screens/authentication/view/pages/sign_in_view.dart';
@@ -32,6 +33,8 @@ class MainAuthView extends StatelessWidget {
             return SignInView();
           } else if (state is PhoneVerifyState) {
             return PhoneVerificationView();
+          } else if (state is AuthorizationState) {
+            return AuthorizationView();
           } else if (state is ForgotPasswordState) {
             return Center(child: Text("Forgot Password"));
           } else {

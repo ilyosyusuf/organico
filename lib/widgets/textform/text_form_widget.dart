@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
+import 'package:organico/core/constants/pmconst/pm_const.dart';
 
 class MyTextField {
   static textField({
@@ -23,12 +24,13 @@ class MyTextField {
         obscureText: isShown,
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
-          hintText: text,
+          contentPadding: PMconst.small,
+          hintText: text, 
           hintStyle: const TextStyle(color: Colors.grey),
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           // fillColor: ColorConst.formFieldColor,
-          filled: true,
+          // filled: true,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(35.0),
             borderSide: const BorderSide(color: ColorConst.mainColor),

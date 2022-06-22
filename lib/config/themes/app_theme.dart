@@ -13,7 +13,7 @@ class AppTheme{
     // scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.dark(
       brightness: Brightness.dark,
-      primary: ColorConst.kPrimaryColor,
+      primary: ColorConst.white,
     )
   );
   get appLightTheme => ThemeData(
@@ -23,7 +23,7 @@ class AppTheme{
     // scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.light(
       brightness: Brightness.light,
-      primary: ColorConst.kPrimaryColor,
+      primary: ColorConst.white,
     )
   );
 }

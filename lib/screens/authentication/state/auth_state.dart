@@ -17,6 +17,10 @@ class PhoneVerifyState extends AuthState {
   PhoneVerifyState();
 }
 
+class AuthorizationState extends AuthState {
+  AuthorizationState();
+}
+
 class ForgotPasswordState extends AuthState {
   ForgotPasswordState();
 }

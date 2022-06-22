@@ -29,17 +29,17 @@ class SignUpView extends StatelessWidget {
           children: [
             AppBarWidget(
               text: "New Registration",
-              onPressed: (){
+              onPressed: () {
                 dataFunction.changeState(SignInState());
               },
             ),
-            SizedBox(
+            Expanded(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: PMconst.small,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                           "It looks like you don’t have an account on this number. Please let us know some information for a secure service.",
@@ -52,20 +52,36 @@ class SignUpView extends StatelessWidget {
                       SizedBox(height: context.h * 0.02),
                       Text("Password", style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
-                      MyTextField.textField(
-                          text: "Password",
-                          controller: data.nameController,
-                          suffixIcon:
-                              IconButton(onPressed: () {}, icon: IconConst.eye)),
+                      StatefulBuilder(builder: ((context, setState) {
+                        return MyTextField.textField(
+                            text: "Password",
+                            controller: data.passwordController,
+                            isShown: data.getShown,
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  dataFunction.obSecure();
+                                  setState(() {});
+                                },
+                                iconSize: 40,
+                                icon: IconConst.eye));
+                      })),
                       SizedBox(height: context.h * 0.02),
-                      Text("Password Confirmation", style: FStyles.headline4text),
+                      Text("Password Confirmation",
+                          style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
-                      MyTextField.textField(
-                        text: "Password Confirmation",
-                        controller: data.nameController,
-                        suffixIcon:
-                            IconButton(onPressed: () {}, icon: IconConst.eye),
-                      ),
+                      StatefulBuilder(builder: ((context, setState) {
+                        return MyTextField.textField(
+                          text: "Password Confirmation",
+                          controller: data.confirmationController,
+                          suffixIcon: IconButton(
+                              iconSize: 40,
+                              onPressed: () {
+                                dataFunction.obSecure();
+                                setState(() {});
+                              },
+                              icon: IconConst.eye),
+                        );
+                      })),
                       SizedBox(height: context.h * 0.02),
                       SizedBox(
                         width: context.w,
@@ -84,7 +100,7 @@ class SignUpView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: context.h * 0.03),
+                      SizedBox(height: context.h * 0.05),
                       ElevatedButtonWidget(
                           height: context.h * 0.06,
                           width: context.w,
@@ -95,20 +111,22 @@ class SignUpView extends StatelessWidget {
                           onPressed: () {}),
                       Container(
                         alignment: Alignment.center,
-                        height: context.h * 0.1,
-                        child: Text("or use", style: FStyles.headline5main,),
+                        height: context.h * 0.12,
+                        child: Text(
+                          "or use",
+                          style: FStyles.headline5main,
                         ),
-                                          ElevatedButtonWidget(
+                      ),
+                      ElevatedButtonWidget(
                           height: context.h * 0.06,
                           width: context.w,
                           backgroundColor: ColorConst.white,
                           borderColor: ColorConst.mainColor,
                           child: const Text(
                             "Sign Up With Google",
-                            style: FStyles.headline5s
+                            style: TextStyle(color: Colors.black),
                           ),
                           onPressed: () {}),
-                      
                     ],
                   ),
                 ),
@@ -120,5 +138,3 @@ class SignUpView extends StatelessWidget {
     );
   }
 }
-
-

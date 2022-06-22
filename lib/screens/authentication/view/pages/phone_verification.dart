@@ -52,7 +52,7 @@ class PhoneVerificationView extends StatelessWidget {
                     PhoneTextField.phoneField(
                         text: "Your Phone Number",
                         controller: data.phoneController),
-                    SizedBox(height: context.h * 0.08),
+                    SizedBox(height: context.h * 0.1),
                     ElevatedButtonWidget(
                         height: context.h * 0.06,
                         width: context.w,

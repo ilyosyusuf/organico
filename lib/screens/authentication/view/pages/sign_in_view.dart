@@ -19,6 +19,7 @@ class SignInView extends StatelessWidget {
 
   Scaffold signInScaffold(BuildContext context) {
     var data = context.watch<AuthCubit>();
+    var dataFunction = context.read<AuthCubit>();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -29,7 +30,7 @@ class SignInView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconConst.welcome,
-                SizedBox(height: context.h * 0.04),
+                SizedBox(height: context.h * 0.03),
                 const Text("Welcome", style: FStyles.headline2s),
                 const Text(
                   "Welcome to Organico Mobile Apps. Please fill in the field below to sign in.",
@@ -38,15 +39,24 @@ class SignInView extends StatelessWidget {
                 SizedBox(height: context.h * 0.04),
                 PhoneTextField.phoneField(text: "Your Phone Number", controller: data.phoneController),
                 SizedBox(height: context.h * 0.01),
-                MyTextField.textField(
+                StatefulBuilder(builder: ((context, setState) {
+                  return MyTextField.textField(
+                    isShown: data.getShown,
                     prefixIcon: IconButton(
                       onPressed: () {},
+                          iconSize: 40,
                       icon: IconConst.password,
                     ),
                     suffixIcon:
-                        IconButton(onPressed: () {}, icon: IconConst.eye),
+                        IconButton(
+                          iconSize: 40,
+                          onPressed: () {
+                            dataFunction.obSecure();
+                            setState((){});
+                          }, icon: IconConst.eye),
                     text: "Password",
-                    controller: data.passwordController),
+                    controller: data.passwordController);
+                })),
                 Padding(
                   padding: PMconst.extraSmall,
                   child: Container(
@@ -62,14 +72,24 @@ class SignInView extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: context.h * 0.06),
+                SizedBox(height: context.h * 0.05),
                 ElevatedButtonWidget(
                     height: context.h * 0.06,
                     child: const Text(
                       "Sign In",
                       style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () {})
+                    onPressed: () {}),
+                SizedBox(height: context.h * 0.02),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't You have an account? "),
+                    InkWell(
+                      child: Text("Sign Up", style: FStyles.headline5text)
+                    )
+                  ],
+                )
               ],
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
+import 'package:organico/core/constants/pmconst/pm_const.dart';
 
 class PhoneTextField {
   static phoneField({
@@ -26,10 +27,9 @@ class PhoneTextField {
         decoration: InputDecoration(
           hintText: text,
           hintStyle: const TextStyle(color: Colors.grey),
+          contentPadding: PMconst.small,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
-          // fillColor: ColorConst.formFieldColor,
-          filled: true,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(35.0),
             borderSide: const BorderSide(color: ColorConst.mainColor),
