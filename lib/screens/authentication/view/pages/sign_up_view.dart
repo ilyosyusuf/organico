@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/core/components/keyboard_service.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
@@ -41,10 +42,10 @@ class SignUpView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      if(!KeyBoardService.instance.isKeyBoard(context)) Text(
                           "It looks like you don’t have an account on this number. Please let us know some information for a secure service.",
                           style: FStyles.headline5main),
-                      SizedBox(height: context.h * 0.03),
+                      if(!KeyBoardService.instance.isKeyBoard(context)) SizedBox(height: context.h * 0.03),
                       Text("Full Name", style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
                       MyTextField.textField(

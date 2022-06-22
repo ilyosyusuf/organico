@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/core/components/keyboard_service.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
@@ -40,7 +41,7 @@ class PhoneVerificationView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconConst.forgot,
+                    if(!KeyBoardService.instance.isKeyBoard(context)) IconConst.forgot,
                     SizedBox(height: context.h * 0.04),
                     const Text("Enter Your Phone Number",
                         style: FStyles.headline2s),
@@ -60,7 +61,9 @@ class PhoneVerificationView extends StatelessWidget {
                           "Next",
                           style: TextStyle(color: Colors.white),
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          dataFonction.changeState(AuthorizationState());
+                        }),
                   ],
                 ),
               ),
