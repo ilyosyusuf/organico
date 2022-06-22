@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/authentication/state/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(SignInState());
+  AuthCubit() : super(PhoneVerifyState());
 
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController confirmationController = TextEditingController();
 
   changeState(AuthState state) {
     emit(state);

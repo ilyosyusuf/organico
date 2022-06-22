@@ -13,6 +13,9 @@ class SignUpState extends AuthState {
 class SignInState extends AuthState {
   SignInState();
 }
+class PhoneVerifyState extends AuthState {
+  PhoneVerifyState();
+}
 
 class ForgotPasswordState extends AuthState {
   ForgotPasswordState();
