@@ -31,7 +31,7 @@ class SignUpView extends StatelessWidget {
             AppBarWidget(
               text: "New Registration",
               onPressed: () {
-                dataFunction.changeState(SignInState());
+                dataFunction.changeState(PhoneVerifyState());
               },
             ),
             Expanded(

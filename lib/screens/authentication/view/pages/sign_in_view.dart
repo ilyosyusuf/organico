@@ -69,7 +69,9 @@ class SignInView extends StatelessWidget {
                     height: context.h * 0.03,
                     width: context.h,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        dataFunction.changeState(ForgotPasswordState());
+                      },
                       child: const Text(
                         "Forgot Password?",
                         style: FStyles.headline5text,

@@ -22,7 +22,9 @@ class OtacNumberView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppBarWidget(onPressed: () {}, text: "OTAC Number"),
+            AppBarWidget(onPressed: () {
+              dataFonction.changeState(ForgotPasswordState());
+            }, text: "OTAC Number"),
             SizedBox(height: context.h * 0.06),
             Text("Enter Authorization Code", style: FStyles.headline3s),
             SizedBox(height: context.h * 0.03),
@@ -57,7 +59,7 @@ class OtacNumberView extends StatelessWidget {
                       height: context.h * 0.06,
                       child: Text("Next"),
                       onPressed: () {
-                        // dataFonction.changeState();
+                        dataFonction.changeState(ResetPasswordState());
                       })
                 ],
               ),

@@ -22,7 +22,9 @@ class AuthorizationView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppBarWidget(onPressed: () {}, text: "OTAC Number"),
+            AppBarWidget(onPressed: () {
+              dataFonction.changeState(PhoneVerifyState());
+            }, text: "OTAC Number"),
             SizedBox(height: context.h * 0.06),
             Text("Enter Authorization Code", style: FStyles.headline3s),
             SizedBox(height: context.h * 0.03),

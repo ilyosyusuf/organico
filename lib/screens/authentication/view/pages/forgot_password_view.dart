@@ -31,7 +31,7 @@ class ForgotPasswordView extends StatelessWidget {
             AppBarWidget(
               text: "Forgot Password",
               onPressed: () {
-                dataFonction.changeState(SignUpState());
+                dataFonction.changeState(SignInState());
               },
             ),
             SingleChildScrollView(
@@ -62,7 +62,7 @@ class ForgotPasswordView extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                         onPressed: () {
-                          dataFonction.changeState(SignUpState());
+                          dataFonction.changeState(OtacNumberState());
                         }),
                   ],
                 ),
