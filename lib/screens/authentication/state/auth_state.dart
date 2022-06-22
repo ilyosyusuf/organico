@@ -21,6 +21,14 @@ class AuthorizationState extends AuthState {
   AuthorizationState();
 }
 
+class OtacNumberState extends AuthState {
+  OtacNumberState();
+}
+
+class ResetPasswordState extends AuthState {
+  ResetPasswordState();
+}
+
 class ForgotPasswordState extends AuthState {
   ForgotPasswordState();
 }

@@ -11,8 +11,8 @@ import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/buttons/elevated_button.dart';
 import 'package:organico/widgets/textform/text_form_widget.dart';
 
-class AuthorizationView extends StatelessWidget {
-  const AuthorizationView({Key? key}) : super(key: key);
+class OtacNumberView extends StatelessWidget {
+  const OtacNumberView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class AuthorizationView extends StatelessWidget {
                       height: context.h * 0.06,
                       child: Text("Next"),
                       onPressed: () {
-                        dataFonction.changeState(SignUpState());
+                        // dataFonction.changeState();
                       })
                 ],
               ),

@@ -4,7 +4,9 @@ import 'package:organico/screens/authentication/cubit/auth_cubit.dart';
 import 'package:organico/screens/authentication/state/auth_state.dart';
 import 'package:organico/screens/authentication/view/pages/authorization_view.dart';
 import 'package:organico/screens/authentication/view/pages/forgot_password_view.dart';
+import 'package:organico/screens/authentication/view/pages/otac_number_view.dart';
 import 'package:organico/screens/authentication/view/pages/phone_verification.dart';
+import 'package:organico/screens/authentication/view/pages/reset_password_view.dart';
 import 'package:organico/screens/authentication/view/pages/sign_in_view.dart';
 import 'package:organico/screens/authentication/view/pages/sign_up_view.dart';
 
@@ -36,8 +38,14 @@ class MainAuthView extends StatelessWidget {
           } else if (state is AuthorizationState) {
             return AuthorizationView();
           } else if (state is ForgotPasswordState) {
-            return Center(child: Text("Forgot Password"));
-          } else {
+            return ForgotPasswordView();
+          }  else if (state is ResetPasswordState) {
+            return ResetPasswordView();
+          }
+           else if (state is OtacNumberState) {
+            return OtacNumberView();
+          } 
+           else {
             return Container();
           }
         },

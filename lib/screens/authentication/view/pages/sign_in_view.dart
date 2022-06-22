@@ -92,7 +92,7 @@ class SignInView extends StatelessWidget {
                     Text("Don't You have an account? "),
                     InkWell(
                         onTap: () {
-                          dataFunction.changeState(SignUpState());
+                          dataFunction.changeState(PhoneVerifyState());
                         },
                         child: Text("Sign Up", style: FStyles.headline5text))
                   ],
