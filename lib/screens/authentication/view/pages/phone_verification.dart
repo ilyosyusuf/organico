@@ -41,7 +41,8 @@ class PhoneVerificationView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if(!KeyBoardService.instance.isKeyBoard(context)) IconConst.forgot,
+                    if (!KeyBoardService.instance.isKeyBoard(context))
+                      IconConst.forgot,
                     SizedBox(height: context.h * 0.04),
                     const Text("Enter Your Phone Number",
                         style: FStyles.headline2s),

@@ -16,11 +16,6 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   AnimationController? animationController;
-  Animation<Color?>? colorAnimation;
-  Animation<Alignment?>? alignmentAnimation;
-  Color colorOfContainer = Colors.black;
-  double widthOfContainer = 300;
-  double heightOfContainer = 100;
 
   @override
   void initState() {
@@ -60,7 +55,7 @@ class _SplashViewState extends State<SplashView>
             child: IconConst.logo,
           ),
           SizedBox(height: context.h * 0.03),
-          Text("Organico", style: FStyles.headline2s)
+          const Text("Organico", style: FStyles.headline2s)
         ],
       ),
     ));

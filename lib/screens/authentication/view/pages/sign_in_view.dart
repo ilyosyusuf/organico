@@ -44,24 +44,26 @@ class SignInView extends StatelessWidget {
                     text: "Your Phone Number",
                     controller: data.phoneController),
                 SizedBox(height: context.h * 0.01),
-                StatefulBuilder(builder: ((context, setState) {
-                  return MyTextField.textField(
-                      isShown: data.getShown,
-                      prefixIcon: IconButton(
-                        onPressed: () {},
-                        iconSize: 40,
-                        icon: IconConst.password,
-                      ),
-                      suffixIcon: IconButton(
+                StatefulBuilder(
+                  builder: ((context, setState) {
+                    return MyTextField.textField(
+                        isShown: data.getShown,
+                        prefixIcon: IconButton(
+                          onPressed: () {},
                           iconSize: 40,
-                          onPressed: () {
-                            dataFunction.obSecure();
-                            setState(() {});
-                          },
-                          icon: IconConst.eye),
-                      text: "Password",
-                      controller: data.passwordController);
-                })),
+                          icon: IconConst.password,
+                        ),
+                        suffixIcon: IconButton(
+                            iconSize: 40,
+                            onPressed: () {
+                              dataFunction.obSecure();
+                              setState(() {});
+                            },
+                            icon: IconConst.eye),
+                        text: "Password",
+                        controller: data.passwordController);
+                  }),
+                ),
                 Padding(
                   padding: PMconst.extraSmall,
                   child: Container(
@@ -91,12 +93,13 @@ class SignInView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't You have an account? "),
+                    const Text("Don't You have an account? "),
                     InkWell(
                         onTap: () {
                           dataFunction.changeState(PhoneVerifyState());
                         },
-                        child: Text("Sign Up", style: FStyles.headline5text))
+                        child:
+                            const Text("Sign Up", style: FStyles.headline5text))
                   ],
                 )
               ],

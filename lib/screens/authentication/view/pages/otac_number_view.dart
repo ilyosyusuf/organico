@@ -22,15 +22,17 @@ class OtacNumberView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppBarWidget(onPressed: () {
-              dataFonction.changeState(ForgotPasswordState());
-            }, text: "OTAC Number"),
+            AppBarWidget(
+                onPressed: () {
+                  dataFonction.changeState(ForgotPasswordState());
+                },
+                text: "OTAC Number"),
             SizedBox(height: context.h * 0.06),
-            Text("Enter Authorization Code", style: FStyles.headline3s),
+            const Text("Enter Authorization Code", style: FStyles.headline3s),
             SizedBox(height: context.h * 0.03),
-            Text("We have sent SMS to:", style: FStyles.headline5main),
+            const Text("We have sent SMS to:", style: FStyles.headline5main),
             SizedBox(height: context.h * 0.005),
-            Text("+998(XX) XXX XX XX", style: FStyles.headline3s),
+            const Text("+998(XX) XXX XX XX", style: FStyles.headline3s),
             SizedBox(height: context.h * 0.03),
             Padding(
               padding: PMconst.small,
@@ -57,7 +59,7 @@ class OtacNumberView extends StatelessWidget {
                   SizedBox(height: context.h * 0.03),
                   ElevatedButtonWidget(
                       height: context.h * 0.06,
-                      child: Text("Next"),
+                      child: const Text("Next"),
                       onPressed: () {
                         dataFonction.changeState(ResetPasswordState());
                       })

@@ -25,12 +25,10 @@ class MyTextField {
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
           contentPadding: PMconst.small,
-          hintText: text, 
+          hintText: text,
           hintStyle: const TextStyle(color: Colors.grey),
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
-          // fillColor: ColorConst.formFieldColor,
-          // filled: true,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(35.0),
             borderSide: const BorderSide(color: ColorConst.mainColor),
@@ -45,7 +43,7 @@ class MyTextField {
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(35.0),
-            borderSide:  BorderSide(color: ColorConst.kPrimaryColor),
+            borderSide: BorderSide(color: ColorConst.kPrimaryColor),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide.none,

@@ -42,16 +42,18 @@ class SignUpView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      if(!KeyBoardService.instance.isKeyBoard(context)) Text(
-                          "It looks like you don’t have an account on this number. Please let us know some information for a secure service.",
-                          style: FStyles.headline5main),
-                      if(!KeyBoardService.instance.isKeyBoard(context)) SizedBox(height: context.h * 0.03),
-                      Text("Full Name", style: FStyles.headline4text),
+                      if (!KeyBoardService.instance.isKeyBoard(context))
+                        const Text(
+                            "It looks like you don’t have an account on this number. Please let us know some information for a secure service.",
+                            style: FStyles.headline5main),
+                      if (!KeyBoardService.instance.isKeyBoard(context))
+                        SizedBox(height: context.h * 0.03),
+                      const Text("Full Name", style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
                       MyTextField.textField(
                           text: "Full Name", controller: data.nameController),
                       SizedBox(height: context.h * 0.02),
-                      Text("Password", style: FStyles.headline4text),
+                      const Text("Password", style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
                       StatefulBuilder(builder: ((context, setState) {
                         return MyTextField.textField(
@@ -67,22 +69,24 @@ class SignUpView extends StatelessWidget {
                                 icon: IconConst.eye));
                       })),
                       SizedBox(height: context.h * 0.02),
-                      Text("Password Confirmation",
+                      const Text("Password Confirmation",
                           style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
-                      StatefulBuilder(builder: ((context, setState) {
-                        return MyTextField.textField(
-                          text: "Password Confirmation",
-                          controller: data.confirmationController,
-                          suffixIcon: IconButton(
-                              iconSize: 40,
-                              onPressed: () {
-                                dataFunction.obSecure();
-                                setState(() {});
-                              },
-                              icon: IconConst.eye),
-                        );
-                      })),
+                      StatefulBuilder(
+                        builder: ((context, setState) {
+                          return MyTextField.textField(
+                            text: "Password Confirmation",
+                            controller: data.confirmationController,
+                            suffixIcon: IconButton(
+                                iconSize: 40,
+                                onPressed: () {
+                                  dataFunction.obSecure();
+                                  setState(() {});
+                                },
+                                icon: IconConst.eye),
+                          );
+                        }),
+                      ),
                       SizedBox(height: context.h * 0.02),
                       SizedBox(
                         width: context.w,
@@ -90,12 +94,12 @@ class SignUpView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Checkbox(value: false, onChanged: (v) {}),
-                            Text("I Accept the "),
-                            InkWell(
+                            const Text("I Accept the "),
+                            const InkWell(
                                 child: Text("Terms of Use",
                                     style: FStyles.headline5text)),
-                            Text(" and "),
-                            InkWell(
+                            const Text(" and "),
+                            const InkWell(
                                 child: Text("Privacy Policy",
                                     style: FStyles.headline5text)),
                           ],
@@ -113,7 +117,7 @@ class SignUpView extends StatelessWidget {
                       Container(
                         alignment: Alignment.center,
                         height: context.h * 0.12,
-                        child: Text(
+                        child: const Text(
                           "or use",
                           style: FStyles.headline5main,
                         ),
