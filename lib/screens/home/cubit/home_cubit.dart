@@ -39,5 +39,5 @@ class HomeCubit extends Cubit<MainHomeState> {
     'Meats'
   ];
 
-  List colorList = [ColorConst.whiteGreen, ColorConst.whitePink, ColorConst.whiteYellow];
+  List colorList = [ColorConst.whiteGreen, ColorConst.whitePink, ColorConst.whiteYellow, ColorConst.blackPink, ColorConst.whiteGreen, ColorConst.whitePink, ColorConst.whiteYellow, ColorConst.blackPink];
 }

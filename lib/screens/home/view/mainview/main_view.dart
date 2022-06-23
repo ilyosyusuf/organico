@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/screens/home/view/pages/cart/cart_view.dart';
+import 'package:organico/screens/home/view/pages/explore/explore_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
 import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
@@ -30,7 +31,7 @@ class MainView extends StatelessWidget {
           if (state is HomeState) {
             return HomeView();
           } else if (state is ExploreState) {
-            return Center(child: Text("Explore"));
+            return ExploreView();
           } else if (state is CartState) {
             return CartView();
           } else if (state is ProfileState) {

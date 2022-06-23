@@ -13,6 +13,7 @@ import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/services/product_data_service.dart';
 import 'package:organico/widgets/categorywidget/categories_widget.dart';
+import 'package:organico/widgets/categorywidget/main_products_category_widget.dart';
 import 'package:organico/widgets/listtilewidgets/category_list_tile.dart';
 import 'package:organico/widgets/listtilewidgets/coupon_list_tile.dart';
 
@@ -28,6 +29,7 @@ class HomeView extends StatelessWidget {
     var data = ProductDataService.instance.productList;
     var cubitData = context.watch<HomeCubit>();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [
@@ -71,6 +73,17 @@ class HomeView extends StatelessWidget {
             ),
             SizedBox(height: context.h * 0.03),
             CategoryListTile(text: "Best Selling"),
+                        Container(
+              height: context.h * 0.27,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: data[0].length,
+                itemBuilder: (context, i) {
+                  return MainProductsCategoryWidget(index: i);
+                },
+              ),
+            ),
+            
           ],
         ),
       ),

@@ -12,6 +12,7 @@ class IconConst{
   static final SvgPicture coupon = SvgPicture.asset('assets/icons/Coupon.svg');
   static final SvgPicture plusbutton = SvgPicture.asset('assets/icons/PlusButton.svg');
   static final SvgPicture minusbutton = SvgPicture.asset('assets/icons/MinusButton.svg');
+  static final SvgPicture sort = SvgPicture.asset('assets/icons/Sort.svg');
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');

@@ -10,6 +10,7 @@ import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/services/product_data_service.dart';
+import 'package:organico/widgets/apbar/main_app_bar_widget.dart';
 
 class CartView extends StatelessWidget {
   const CartView({Key? key}) : super(key: key);
@@ -21,16 +22,7 @@ class CartView extends StatelessWidget {
         body: SafeArea(
       child: Column(
         children: [
-          Container(
-            height: context.h * 0.07,
-            width: context.w,
-            padding: PMconst.small,
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "My Cart",
-              style: FStyles.headline3s,
-            ),
-          ),
+          MainAppBarWidget(text: "My Cart"),
           SizedBox(height: context.h * 0.04),
           Padding(
             padding: PMconst.small,
