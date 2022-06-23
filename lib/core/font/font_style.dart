@@ -11,6 +11,7 @@ class FStyles {
   static const TextStyle headline4text = TextStyle(fontSize: FSize.medium, fontWeight: FWeight.bold, color: ColorConst.textColor);
   static const TextStyle headline4sbold = TextStyle(fontSize: FSize.medium, fontWeight: FWeight.bold);
   static const TextStyle headline5s = TextStyle(fontSize: FSize.medium);
+  static const TextStyle headline52 = TextStyle(fontSize: FSize.medium2);
   static const TextStyle headline5text = TextStyle(fontSize: FSize.medium2, color: ColorConst.green);
   static const TextStyle headline5main = TextStyle(fontSize: FSize.medium2, color: ColorConst.mainColor);
   static const TextStyle headline6s = TextStyle(fontSize: FSize.small);

@@ -16,6 +16,6 @@ class BoxOnlyDecoration {
           bottomRight: Radius.circular(bottomRight),
           topRight: Radius.circular(topRight),
         ),
-        border: Border.all(color: Colors.grey)
+        border: Border.all(color: Colors.transparent)
       );
 }

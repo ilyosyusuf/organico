@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/home_state.dart';
+import 'package:organico/screens/home/view/pages/home/home_view.dart';
 
 class MainView extends StatelessWidget {
   const MainView({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class MainView extends StatelessWidget {
         listener: ((context, state) {}),
         builder: (context, state) {
           if (state is HomeState) {
-            return Center(child: Text("Home"));
+            return HomeView();
           } else if (state is ExploreState) {
             return Center(child: Text("Explore"));
           } else if (state is CartState) {
