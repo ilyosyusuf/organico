@@ -22,6 +22,23 @@ class HomeCubit extends Cubit<MainHomeState> {
     return productList;
   }
 
+
+  int currentIndex = 0;
+
+  onStateChange(int index) {
+    currentIndex = index;
+    switch (index) {
+      case 0:
+        return emit(HomeState());
+      case 1:
+        return emit(ExploreState());
+      case 2:
+        return emit(CartState());
+      case 3:
+        return emit(ProfileState());    
+    }
+  }
+
   // List for categories in homeview
   List categoriesList = [
     'assets/images/broccoli.png',

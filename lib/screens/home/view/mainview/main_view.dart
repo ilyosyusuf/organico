@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
+import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
 class MainView extends StatelessWidget {
   const MainView({Key? key}) : super(key: key);
@@ -42,6 +43,7 @@ class MainView extends StatelessWidget {
           }
         },
       ),
+      bottomNavigationBar: TabBarWidget(),
     );
   }
 }

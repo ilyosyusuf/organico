@@ -18,7 +18,7 @@ class IconConst{
 
   // home
   static final SvgPicture home = SvgPicture.asset('assets/icons/Home.svg');
-  static final SvgPicture explore = SvgPicture.asset('assets/icons/Explore.svg');
+  static final SvgPicture explore = SvgPicture.asset('assets/icons/Search.svg');
   static final SvgPicture cart = SvgPicture.asset('assets/icons/Cart.svg');
   static final SvgPicture profile = SvgPicture.asset('assets/icons/Profile.svg');
 }
