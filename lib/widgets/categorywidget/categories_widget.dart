@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/core/components/box_full_decoration.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
@@ -8,14 +9,12 @@ class CategoriesWidget extends StatelessWidget {
   final int index;
   const CategoriesWidget({
     Key? key,
-    required this.data,
-    required this.index,
+    required this.index
   }) : super(key: key);
-
-  final HomeCubit data;
 
   @override
   Widget build(BuildContext context) {
+    var data = context.watch<HomeCubit>();
     return Padding(
       padding: EdgeInsets.only(left: 18.0),
       child: InkWell(

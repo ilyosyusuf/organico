@@ -10,6 +10,8 @@ class IconConst{
   static final SvgPicture eye = SvgPicture.asset('assets/icons/eye.svg');
   static final SvgPicture password = SvgPicture.asset('assets/icons/password.svg');
   static final SvgPicture coupon = SvgPicture.asset('assets/icons/Coupon.svg');
+  static final SvgPicture plusbutton = SvgPicture.asset('assets/icons/PlusButton.svg');
+  static final SvgPicture minusbutton = SvgPicture.asset('assets/icons/MinusButton.svg');
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');

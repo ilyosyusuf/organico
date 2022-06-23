@@ -11,6 +11,7 @@ import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/services/product_data_service.dart';
 import 'package:organico/widgets/categorywidget/categories_widget.dart';
 import 'package:organico/widgets/listtilewidgets/category_list_tile.dart';
 import 'package:organico/widgets/listtilewidgets/coupon_list_tile.dart';
@@ -24,7 +25,8 @@ class HomeView extends StatelessWidget {
   }
 
   Scaffold homeScaffold(BuildContext context) {
-    var data = context.watch<HomeCubit>();
+    var data = ProductDataService.instance.productList;
+    var cubitData = context.watch<HomeCubit>();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -61,9 +63,9 @@ class HomeView extends StatelessWidget {
               height: context.h * 0.16,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: data.productList.length,
+                itemCount: cubitData.categoriesName.length,
                 itemBuilder: (context, i) {
-                  return CategoriesWidget(data: data, index: i);
+                  return CategoriesWidget(index: i);
                 },
               ),
             ),

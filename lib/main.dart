@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/config/routes/page_routes.dart';
 import 'package:organico/config/themes/app_theme.dart';
+import 'package:organico/services/product_data_service.dart';
 
 void main() {
   runApp(const MyApp());
+  ProductDataService.instance.getProducts();
 }
 
 class MyApp extends StatelessWidget {

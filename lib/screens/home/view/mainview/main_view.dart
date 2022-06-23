@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/home_state.dart';
+import 'package:organico/screens/home/view/pages/cart/cart_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
 import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
@@ -14,9 +15,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        var data = HomeCubit();
-        data.getProducts();
-        return data;
+        return HomeCubit();
       },
       child: mainScaffold(),
     );
@@ -33,7 +32,7 @@ class MainView extends StatelessWidget {
           } else if (state is ExploreState) {
             return Center(child: Text("Explore"));
           } else if (state is CartState) {
-            return Center(child: Text("Cart"));
+            return CartView();
           } else if (state is ProfileState) {
             return Center(child: Text("Home"));
           } else if (state is ErrorState) {
