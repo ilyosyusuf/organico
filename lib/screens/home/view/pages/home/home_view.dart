@@ -2,11 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/core/components/box_full_decoration.dart';
 import 'package:organico/core/components/box_only_decoration.dart';
+import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/widgets/categorywidget/categories_widget.dart';
+import 'package:organico/widgets/listtilewidgets/category_list_tile.dart';
 import 'package:organico/widgets/listtilewidgets/coupon_list_tile.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,38 +24,58 @@ class HomeView extends StatelessWidget {
   }
 
   Scaffold homeScaffold(BuildContext context) {
+    var data = context.watch<HomeCubit>();
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: PMconst.small,
-          child: Column(
-            children: [
-              const Text("Your Location", style: FStyles.headline52),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Bandun, Cimahi", style: FStyles.headline4sbold),
-                  IconConst.downarrow,
-                ],
-              ),
-              SizedBox(height: context.h * 0.02),
-              CupertinoSearchTextField(
+        child: Column(
+          children: [
+            SizedBox(height: context.h * 0.01),
+            const Text("Your Location", style: FStyles.headline52),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Bandun, Cimahi", style: FStyles.headline4sbold),
+                IconConst.downarrow,
+              ],
+            ),
+            SizedBox(height: context.h * 0.02),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18.0),
+              child: CupertinoSearchTextField(
                 placeholder: "Search anything here",
                 padding: PMconst.small,
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              SizedBox(height: context.h * 0.04),
-              CouponListTileWidget(
-                leadingColor: Colors.green,
-                title: "You have 3 coupon",
-                subtitle: "Let’s use this coupon",
-                trailing: IconConst.rightarrow,
-                onTap: () {},
-              )
-            ],
-          ),
+            ),
+            SizedBox(height: context.h * 0.03),
+            CouponListTileWidget(
+              leadingColor: ColorConst.whiteGreen,
+              title: "You have 3 coupon",
+              subtitle: "Let’s use this coupon",
+              trailing: IconConst.rightarrow,
+              onTap: () {},
+            ),
+            SizedBox(height: context.h * 0.01),
+            CategoryListTile(text: "Choose Category"),
+            Container(
+              height: context.h * 0.16,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: data.productList.length,
+                itemBuilder: (context, i) {
+                  return CategoriesWidget(data: data, index: i);
+                },
+              ),
+            ),
+            SizedBox(height: context.h * 0.03),
+            CategoryListTile(text: "Best Selling"),
+          ],
         ),
       ),
     );
   }
 }
+
+
+
+
