@@ -39,7 +39,13 @@ class HomeView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               SizedBox(height: context.h * 0.04),
-              CouponListTileWidget(),
+              CouponListTileWidget(
+                leadingColor: Colors.green,
+                title: "You have 3 coupon",
+                subtitle: "Let’s use this coupon",
+                trailing: IconConst.rightarrow,
+                onTap: () {},
+              )
             ],
           ),
         ),
@@ -47,4 +53,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
