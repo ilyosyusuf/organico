@@ -13,7 +13,9 @@ class IconConst{
   static final SvgPicture plusbutton = SvgPicture.asset('assets/icons/PlusButton.svg');
   static final SvgPicture minusbutton = SvgPicture.asset('assets/icons/MinusButton.svg');
   static final SvgPicture sort = SvgPicture.asset('assets/icons/Sort.svg');
+
   static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
+  static final SvgPicture settings = SvgPicture.asset('assets/icons/Settings.svg');
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');
@@ -36,4 +38,8 @@ class IconConst{
   static final SvgPicture lockwhite = SvgPicture.asset('assets/icons/profile/LockWhite.svg');
   static final SvgPicture logoutwhite = SvgPicture.asset('assets/icons/profile/LogoutWhite.svg');
 
+  // notification
+  static final SvgPicture truckwhite = SvgPicture.asset('assets/icons/profile/TruckWhite.svg');
+  static final SvgPicture tagwhite = SvgPicture.asset('assets/icons/profile/TagWhite.svg');
+  static final SvgPicture mailwhite = SvgPicture.asset('assets/icons/profile/MailWhite.svg');
 }

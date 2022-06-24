@@ -55,7 +55,8 @@ class HomeView extends StatelessWidget {
             CouponListTileWidget(
               leadingColor: ColorConst.whiteGreen,
               title: "You have 3 coupon",
-              subtitle: "Let’s use this coupon",
+              subtitle: Text("Let’s use this coupon", style: FStyles.headline5main),
+              leadingChild: IconConst.coupon,
               trailing: IconConst.rightarrow,
               onTap: () {},
             ),

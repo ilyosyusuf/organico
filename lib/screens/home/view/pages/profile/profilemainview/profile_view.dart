@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
@@ -18,7 +19,11 @@ class ProfileView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppBarWidget(text: "Profile", trailing: IconButton(onPressed: (){}, icon: IconConst.notification)),
+            AppBarWidget(text: "Profile", trailing: IconButton(
+              onPressed: (){
+              NavigationService.instance.pushNamed(routeName: '/notificationview');
+              // Navigator.pushNamed(context, '/notificationview');
+            }, icon: IconConst.notification)),
             SizedBox(height: context.h * 0.01),
             const CircleAvatar(
               radius: 70,

@@ -8,16 +8,18 @@ import 'package:organico/core/font/font_style.dart';
 class CouponListTileWidget extends StatelessWidget {
   final Color leadingColor;
   final Color? listTileColor;
+  final Widget leadingChild;
   final String title;
-  final String subtitle;
+  final Widget subtitle;
   final Widget? trailing;
   final VoidCallback? onTap;
   const CouponListTileWidget({
     Key? key,
     required this.leadingColor,
-    this.listTileColor,
+    this.listTileColor = Colors.transparent,
     required this.title,
     required this.subtitle,
+    required this.leadingChild,
     this.trailing,
     this.onTap,
   }) : super(key: key);
@@ -30,15 +32,18 @@ class CouponListTileWidget extends StatelessWidget {
           width: context.w * 0.12,
           height: context.w * 0.12,
           padding: PMconst.extraSmall,
-          child: IconConst.coupon,
-          decoration: BoxOnlyDecoration.decor(leadingColor,
+          child: leadingChild,
+          decoration: BoxOnlyDecoration.decor(
+            leadingColor,
               bottomLeft: 10.0,
               bottomRight: 10.0,
               topLeft: 10.0,
               topRight: 10.0),
         ),
         title: Text(title, style: FStyles.headline4sbold),
-        subtitle: Text(subtitle, style: FStyles.headline5main),
-        trailing: trailing);
+        subtitle: subtitle,
+        trailing: trailing,
+        tileColor: listTileColor,
+        );
   }
 }
