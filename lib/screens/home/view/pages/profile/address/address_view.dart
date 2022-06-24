@@ -10,8 +10,8 @@ import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/buttons/elevated_button.dart';
 import 'package:organico/widgets/listtilewidgets/profile_list_tile_widget.dart';
 
-class PaymentMethodView extends StatelessWidget {
-  const PaymentMethodView({Key? key}) : super(key: key);
+class AddressView extends StatelessWidget {
+  const AddressView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class PaymentMethodView extends StatelessWidget {
         child: Column(
           children: [
             AppBarWidget(
-              text: "Payment Method",
+              text: "My Address",
               leading: IconButton(
                   onPressed: () {
                     NavigationService.instance.pop("");
@@ -35,18 +35,8 @@ class PaymentMethodView extends StatelessWidget {
                 decoration: BoxAllDecoration.decor(Colors.transparent,
                     borderColor: ColorConst.mainColor),
                 child: ProfileListTileWidget(
-                    leading: Container(
-                      width: context.w * 0.12,
-                      height: context.w * 0.12,
-                      padding: PMconst.extraSmall,
-                      child: IconConst.creditcard,
-                      decoration: BoxOnlyDecoration.decor(ColorConst.whiteGreen,
-                          bottomLeft: 10.0,
-                          bottomRight: 10.0,
-                          topLeft: 10.0,
-                          topRight: 10.0),
-                    ),
-                    title: "Credit Card",
+                    title: "Home",
+                    subtitle: const Text("3517 W. Gray St. Utica, Pennsylvania 57867"),
                     trailing: IconConst.rightarrow),
               ),
             ),
@@ -58,18 +48,8 @@ class PaymentMethodView extends StatelessWidget {
                 decoration: BoxAllDecoration.decor(Colors.transparent,
                     borderColor: ColorConst.mainColor),
                 child: ProfileListTileWidget(
-                    leading: Container(
-                      width: context.w * 0.12,
-                      height: context.w * 0.12,
-                      padding: PMconst.extraSmall,
-                      child: IconConst.paypal,
-                      decoration: BoxOnlyDecoration.decor(ColorConst.whiteGreen,
-                          bottomLeft: 10.0,
-                          bottomRight: 10.0,
-                          topLeft: 10.0,
-                          topRight: 10.0),
-                    ),
-                    title: "PayPal",
+                    title: "Work",
+                    subtitle: const Text("2715 Ash Dr. San Jose, South Dakota 83475"),
                     trailing: IconConst.rightarrow),
               ),
             ),
@@ -78,7 +58,7 @@ class PaymentMethodView extends StatelessWidget {
       ),
       floatingActionButton: ElevatedButtonWidget(
           height: context.h * 0.06,
-          child: Text("Add Payment"),
+          child: const Text("Add Address"),
           onPressed: () {}),
     );
   }

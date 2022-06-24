@@ -10,12 +10,14 @@ class ProfileListTileWidget extends StatelessWidget {
   final Widget? trailing;
   final VoidCallback? onTap;
   final Widget? leading;
+  final Widget? subtitle;
   const ProfileListTileWidget({
     Key? key,
     required this.title,
     this.trailing,
     this.onTap,
-    this.leading
+    this.leading,
+    this.subtitle
   }) : super(key: key);
 
   @override
@@ -24,7 +26,10 @@ class ProfileListTileWidget extends StatelessWidget {
       onTap: onTap,
         leading: leading,
         title: Text(title, style: FStyles.headline5bold),
-        trailing: IconConst.rightarrow);
+        subtitle: subtitle,
+        trailing: IconConst.rightarrow,
+
+        );
   }
 }
 

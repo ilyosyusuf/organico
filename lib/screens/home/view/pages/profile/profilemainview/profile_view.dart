@@ -60,6 +60,10 @@ class ProfileView extends StatelessWidget {
                       title: cubitData.titleList[i],
                     ),
                     onTap: () {
+                      if (i == 3) {
+                        NavigationService.instance
+                            .pushNamed(routeName: '/addressview');
+                      } else
                       if (i == 4) {
                         NavigationService.instance
                             .pushNamed(routeName: '/paymentmethodview');

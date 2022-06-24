@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:organico/screens/authentication/view/mainauthview/main_auth_view.dart';
 import 'package:organico/screens/authentication/view/pages/splash_view.dart';
 import 'package:organico/screens/home/view/mainview/main_view.dart';
+import 'package:organico/screens/home/view/pages/profile/address/address_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_settings_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_view.dart';
 import 'package:organico/screens/home/view/pages/profile/password/change_password_view.dart';
@@ -32,6 +33,8 @@ class MyRoute {
         return _pages(ChangePasswordView(forcontext: args as BuildContext));
             case '/paymentmethodview':
         return _pages(PaymentMethodView());
+                  case '/addressview':
+        return _pages(AddressView());
     }
   }
 
