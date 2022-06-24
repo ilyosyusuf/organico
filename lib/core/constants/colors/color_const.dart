@@ -11,6 +11,7 @@ class ColorConst {
   static const Color mainColor = Color(0XFF92929d);
   static const Color textColor = Color(0XFF696974);
   static const Color green = Color(0XFF2ECC71);
+  static const Color profilemaincolor = Color(0XFF0F1C2A);
   static Color whiteYellow = Color(0XFFFFDBDB);
   static Color whitePink = Color(0XFFFDF1DB);
   static Color blackPink = Color(0XFFEFD9DD);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/components/keyboard_service.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
@@ -88,7 +89,9 @@ class SignInView extends StatelessWidget {
                       "Sign In",
                       style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      NavigationService.instance.pushNamedAndRemoveUntil('/mainview');
+                    }),
                 SizedBox(height: context.h * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

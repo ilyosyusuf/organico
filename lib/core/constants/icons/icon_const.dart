@@ -13,6 +13,7 @@ class IconConst{
   static final SvgPicture plusbutton = SvgPicture.asset('assets/icons/PlusButton.svg');
   static final SvgPicture minusbutton = SvgPicture.asset('assets/icons/MinusButton.svg');
   static final SvgPicture sort = SvgPicture.asset('assets/icons/Sort.svg');
+  static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');
@@ -24,4 +25,15 @@ class IconConst{
   static final SvgPicture explore = SvgPicture.asset('assets/icons/Search.svg');
   static final SvgPicture cart = SvgPicture.asset('assets/icons/Cart.svg');
   static final SvgPicture profile = SvgPicture.asset('assets/icons/Profile.svg');
+
+  // profile
+  static final SvgPicture profilewhite = SvgPicture.asset('assets/icons/profile/ProfileWhite.svg');
+  static final SvgPicture creditcardwhite = SvgPicture.asset('assets/icons/profile/CreditCardWhite.svg');
+  static final SvgPicture documentwhite = SvgPicture.asset('assets/icons/profile/DocumentWhite.svg');
+  static final SvgPicture headphonewhite = SvgPicture.asset('assets/icons/profile/HeadPhoneWhite.svg');
+  static final SvgPicture heartwhite = SvgPicture.asset('assets/icons/profile/HeartWhite.svg');
+  static final SvgPicture locationwhite = SvgPicture.asset('assets/icons/profile/LocationWhite.svg');
+  static final SvgPicture lockwhite = SvgPicture.asset('assets/icons/profile/LockWhite.svg');
+  static final SvgPicture logoutwhite = SvgPicture.asset('assets/icons/profile/LogoutWhite.svg');
+
 }

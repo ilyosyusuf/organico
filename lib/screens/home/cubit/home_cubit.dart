@@ -1,9 +1,6 @@
-import 'dart:convert';
-import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
+import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/screens/home/state/home_state.dart';
 
 class HomeCubit extends Cubit<MainHomeState> {
@@ -21,7 +18,7 @@ class HomeCubit extends Cubit<MainHomeState> {
       case 2:
         return emit(CartState());
       case 3:
-        return emit(ProfileState());    
+        return emit(ProfileState());
     }
   }
 
@@ -33,11 +30,41 @@ class HomeCubit extends Cubit<MainHomeState> {
   ];
 
   // List for categories name in homeview
-    List categoriesName = [
-    'Vegetables',
-    'Fruits',
-    'Meats'
+  List categoriesName = ['Vegetables', 'Fruits', 'Meats'];
+
+  // Colors list for home view
+  List colorList = [
+    ColorConst.whiteGreen,
+    ColorConst.whitePink,
+    ColorConst.whiteYellow,
+    ColorConst.blackPink,
+    ColorConst.whiteGreen,
+    ColorConst.whitePink,
+    ColorConst.whiteYellow,
+    ColorConst.blackPink
   ];
 
-  List colorList = [ColorConst.whiteGreen, ColorConst.whitePink, ColorConst.whiteYellow, ColorConst.blackPink, ColorConst.whiteGreen, ColorConst.whitePink, ColorConst.whiteYellow, ColorConst.blackPink];
+  // Icons list for profile page
+  List profileIconList = [
+    IconConst.profilewhite,
+    IconConst.documentwhite,
+    IconConst.heartwhite,
+    IconConst.locationwhite,
+    IconConst.creditcardwhite,
+    IconConst.headphonewhite,
+    IconConst.lockwhite,
+    IconConst.logoutwhite
+  ];
+
+  // Title list for profile page
+  List titleList = [
+    "Edit Profile",
+    "My Orders",
+    "My Wishlist",
+    "My Address",
+    "Payment Method",
+    "Customer Service",
+    "Change Password",
+    "Logout"
+  ];
 }

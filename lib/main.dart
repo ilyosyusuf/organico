@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Organico',
       theme: AppTheme.instance.appLightTheme,
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/mainview',
+      initialRoute: '/splashview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }

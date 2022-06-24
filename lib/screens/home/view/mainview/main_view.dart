@@ -7,6 +7,7 @@ import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/screens/home/view/pages/cart/cart_view.dart';
 import 'package:organico/screens/home/view/pages/explore/explore_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
+import 'package:organico/screens/home/view/pages/profile/profile_view.dart';
 import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
 class MainView extends StatelessWidget {
@@ -35,7 +36,7 @@ class MainView extends StatelessWidget {
           } else if (state is CartState) {
             return CartView();
           } else if (state is ProfileState) {
-            return Center(child: Text("Home"));
+            return ProfileView();
           } else if (state is ErrorState) {
             return Center(child: Text("Error"));
           } else {
