@@ -7,6 +7,7 @@ import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/screens/home/view/pages/cart/cart_view.dart';
 import 'package:organico/screens/home/view/pages/explore/explore_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
+import 'package:organico/screens/home/view/pages/profile/password/change_password_view.dart';
 import 'package:organico/screens/home/view/pages/profile/profilemainview/profile_view.dart';
 import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
@@ -31,6 +32,7 @@ class MainView extends StatelessWidget {
         builder: (context, state) {
           if (state is HomeState) {
             return HomeView();
+            // return ChangePasswordView();
           } else if (state is ExploreState) {
             return ExploreView();
           } else if (state is CartState) {

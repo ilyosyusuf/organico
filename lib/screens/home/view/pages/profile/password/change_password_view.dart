@@ -5,18 +5,21 @@ import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/authentication/cubit/auth_cubit.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/buttons/elevated_button.dart';
 import 'package:organico/widgets/textform/text_form_widget.dart';
 
 class ChangePasswordView extends StatelessWidget {
   final BuildContext forcontext;
-  const ChangePasswordView({Key? key, required this.forcontext}) : super(key: key);
+  const ChangePasswordView({Key? key, 
+  required this.forcontext
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var data = forcontext.watch<AuthCubit>();
-    var dataFunction = forcontext.read<AuthCubit>();
+    var data = context.watch<HomeCubit>();
+    var dataFunction = context.read<HomeCubit>();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -33,7 +36,7 @@ class ChangePasswordView extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: PMconst.small,
+                  padding: PMconst.medium,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +45,6 @@ class ChangePasswordView extends StatelessWidget {
                           "Please fill in the field below to change your current password.",
                           style: FStyles.headline5main),
                       SizedBox(height: context.h * 0.03),
-                      SizedBox(height: context.h * 0.02),
                       const Text("Current Password",
                           style: FStyles.headline4text),
                       SizedBox(height: context.h * 0.01),
@@ -68,7 +70,7 @@ class ChangePasswordView extends StatelessWidget {
                         builder: ((context, setState) {
                           return MyTextField.textField(
                             text: "New Password",
-                            controller: data.confirmationController,
+                            controller: data.newpasswordController,
                             isShown: data.getShown,
                             suffixIcon: IconButton(
                                 iconSize: 40,

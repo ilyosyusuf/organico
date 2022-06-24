@@ -31,9 +31,9 @@ class MyRoute {
         return _pages(NotificationSettingsView());
       case '/changepasswordview':
         return _pages(ChangePasswordView(forcontext: args as BuildContext));
-            case '/paymentmethodview':
+      case '/paymentmethodview':
         return _pages(PaymentMethodView());
-                  case '/addressview':
+      case '/addressview':
         return _pages(AddressView());
     }
   }

@@ -63,8 +63,7 @@ class ProfileView extends StatelessWidget {
                       if (i == 3) {
                         NavigationService.instance
                             .pushNamed(routeName: '/addressview');
-                      } else
-                      if (i == 4) {
+                      } else if (i == 4) {
                         NavigationService.instance
                             .pushNamed(routeName: '/paymentmethodview');
                       } else if (i == 6) {

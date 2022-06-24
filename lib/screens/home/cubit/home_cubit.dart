@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
@@ -67,4 +68,15 @@ class HomeCubit extends Cubit<MainHomeState> {
     "Change Password",
     "Logout"
   ];
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController newpasswordController = TextEditingController();
+  TextEditingController confirmationController = TextEditingController();
+
+  bool _isShown = true;
+
+  get getShown => _isShown;
+
+  void obSecure() {
+    _isShown = !_isShown;
+  }
 }
