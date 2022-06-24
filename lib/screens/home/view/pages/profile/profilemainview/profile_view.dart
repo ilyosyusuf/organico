@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organico/config/init/navigation/navigator.dart';
+import 'package:organico/core/components/box_only_decoration.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
+import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
@@ -25,7 +27,6 @@ class ProfileView extends StatelessWidget {
                     onPressed: () {
                       NavigationService.instance
                           .pushNamed(routeName: '/notificationview');
-                      // Navigator.pushNamed(context, '/notificationview');
                     },
                     icon: IconConst.notification)),
             SizedBox(height: context.h * 0.01),
@@ -44,9 +45,20 @@ class ProfileView extends StatelessWidget {
                 itemBuilder: (context, i) {
                   return InkWell(
                     child: ProfileListTileWidget(
-                        leadingColor: ColorConst.profilemaincolor,
-                        title: cubitData.titleList[i],
-                        leadingChild: cubitData.profileIconList[i]),
+                      leading: Container(
+                        width: context.w * 0.10,
+                        height: context.w * 0.10,
+                        padding: PMconst.extraSmall,
+                        child: cubitData.profileIconList[i],
+                        decoration: BoxOnlyDecoration.decor(
+                            ColorConst.profilemaincolor,
+                            bottomLeft: 10.0,
+                            bottomRight: 10.0,
+                            topLeft: 10.0,
+                            topRight: 10.0),
+                      ),
+                      title: cubitData.titleList[i],
+                    ),
                     onTap: () {
                       if (i == 4) {
                         NavigationService.instance
