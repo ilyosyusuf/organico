@@ -19,11 +19,15 @@ class ProfileView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            AppBarWidget(text: "Profile", trailing: IconButton(
-              onPressed: (){
-              NavigationService.instance.pushNamed(routeName: '/notificationview');
-              // Navigator.pushNamed(context, '/notificationview');
-            }, icon: IconConst.notification)),
+            AppBarWidget(
+                text: "Profile",
+                trailing: IconButton(
+                    onPressed: () {
+                      NavigationService.instance
+                          .pushNamed(routeName: '/notificationview');
+                      // Navigator.pushNamed(context, '/notificationview');
+                    },
+                    icon: IconConst.notification)),
             SizedBox(height: context.h * 0.01),
             const CircleAvatar(
               radius: 70,
@@ -38,10 +42,21 @@ class ProfileView extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: cubitData.titleList.length,
                 itemBuilder: (context, i) {
-                  return ProfileListTileWidget(
-                      leadingColor: ColorConst.profilemaincolor,
-                      title: cubitData.titleList[i],
-                      leadingChild: cubitData.profileIconList[i]);
+                  return InkWell(
+                    child: ProfileListTileWidget(
+                        leadingColor: ColorConst.profilemaincolor,
+                        title: cubitData.titleList[i],
+                        leadingChild: cubitData.profileIconList[i]),
+                    onTap: () {
+                      if (i == 4) {
+                        NavigationService.instance
+                            .pushNamed(routeName: '/paymentmethodview');
+                      } else if (i == 6) {
+                        NavigationService.instance.pushNamed(
+                            routeName: '/changepasswordview', args: context);
+                      }
+                    },
+                  );
                 },
               ),
             ),

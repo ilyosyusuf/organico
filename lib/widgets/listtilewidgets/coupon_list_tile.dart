@@ -10,7 +10,7 @@ class CouponListTileWidget extends StatelessWidget {
   final Color? listTileColor;
   final Widget leadingChild;
   final String title;
-  final Widget subtitle;
+  final Widget? subtitle;
   final Widget? trailing;
   final VoidCallback? onTap;
   const CouponListTileWidget({
@@ -18,7 +18,7 @@ class CouponListTileWidget extends StatelessWidget {
     required this.leadingColor,
     this.listTileColor = Colors.transparent,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
     required this.leadingChild,
     this.trailing,
     this.onTap,

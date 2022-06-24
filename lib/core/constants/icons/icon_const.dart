@@ -16,6 +16,8 @@ class IconConst{
 
   static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
   static final SvgPicture settings = SvgPicture.asset('assets/icons/Settings.svg');
+  static final SvgPicture creditcard = SvgPicture.asset('assets/icons/CreditCard.svg');
+  static final SvgPicture paypal = SvgPicture.asset('assets/icons/Paypal.svg');
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');

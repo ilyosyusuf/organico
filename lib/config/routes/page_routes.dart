@@ -4,6 +4,8 @@ import 'package:organico/screens/authentication/view/pages/splash_view.dart';
 import 'package:organico/screens/home/view/mainview/main_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_settings_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_view.dart';
+import 'package:organico/screens/home/view/pages/profile/password/change_password_view.dart';
+import 'package:organico/screens/home/view/pages/profile/paymentmethod/payment_method_view.dart';
 import 'package:organico/screens/home/view/pages/profile/profilemainview/profile_view.dart';
 
 class MyRoute {
@@ -24,8 +26,12 @@ class MyRoute {
         return _pages(ProfileView());
       case '/notificationview':
         return _pages(NotificationView());
-            case '/notificationsettingsview':
+      case '/notificationsettingsview':
         return _pages(NotificationSettingsView());
+      case '/changepasswordview':
+        return _pages(ChangePasswordView(forcontext: args as BuildContext));
+            case '/paymentmethodview':
+        return _pages(PaymentMethodView());
     }
   }
 
