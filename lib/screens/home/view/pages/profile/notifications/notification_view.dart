@@ -25,11 +25,12 @@ class NotificationView extends StatelessWidget {
               text: "Notification",
               leading: IconButton(
                   onPressed: () {
-                    // NavigationService.instance.pushNamedAndRemoveUntil('/profileview');
                     NavigationService.instance.pop("");
                   },
                   icon: IconConst.leftarrow),
-              trailing: IconButton(onPressed: () {}, icon: IconConst.settings),
+              trailing: IconButton(onPressed: () {
+                NavigationService.instance.pushNamed(routeName: '/notificationsettingsview');
+              }, icon: IconConst.settings),
             ),
             CouponListTileWidget(
               leadingColor: ColorConst.kPrimaryColor,
