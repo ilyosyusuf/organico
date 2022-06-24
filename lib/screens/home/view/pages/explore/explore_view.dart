@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/services/product_data_service.dart';
-import 'package:organico/widgets/apbar/main_app_bar_widget.dart';
+import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/categorywidget/main_products_category_widget.dart';
 
 class ExploreView extends StatelessWidget {
@@ -17,7 +15,7 @@ class ExploreView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MainAppBarWidget(text: "Explore", trailing: IconConst.sort),
+            AppBarWidget(text: "Explore", trailing: IconButton(onPressed: (){}, icon: IconConst.sort)),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(right: 18.0, top: 10.0),

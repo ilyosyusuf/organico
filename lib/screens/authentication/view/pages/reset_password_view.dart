@@ -30,9 +30,9 @@ class ResetPasswordView extends StatelessWidget {
           children: [
             AppBarWidget(
               text: "Reset Password",
-              onPressed: () {
+                            leading: IconButton(onPressed: (){
                 dataFunction.changeState(SignInState());
-              },
+              }, icon: IconConst.leftarrow),
             ),
             Expanded(
               child: SingleChildScrollView(

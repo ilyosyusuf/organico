@@ -30,9 +30,9 @@ class ForgotPasswordView extends StatelessWidget {
           children: [
             AppBarWidget(
               text: "Forgot Password",
-              onPressed: () {
+                            leading: IconButton(onPressed: (){
                 dataFonction.changeState(SignInState());
-              },
+              }, icon: IconConst.leftarrow),
             ),
             SingleChildScrollView(
               child: Padding(

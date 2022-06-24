@@ -4,12 +4,14 @@ import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 
 class AppBarWidget extends StatelessWidget {
-  final VoidCallback onPressed;
   final String text;
+  final Widget leading;
+  final Widget trailing;
   const AppBarWidget({
     Key? key,
-    required this.onPressed,
     required this.text,
+    this.leading = const SizedBox(),
+    this.trailing = const SizedBox(),
   }) : super(key: key);
 
   @override
@@ -18,8 +20,11 @@ class AppBarWidget extends StatelessWidget {
       height: context.h * 0.07,
       child: Row(
         children: [
-          IconButton(onPressed: onPressed, icon: IconConst.leftarrow),
+        leading,
+        SizedBox(width: context.w * 0.04),
           Text(text, style: FStyles.headline4sbold),
+        Spacer(),
+          trailing,
         ],
       ),
     );

@@ -30,9 +30,9 @@ class PhoneVerificationView extends StatelessWidget {
           children: [
             AppBarWidget(
               text: "Phone Verification",
-              onPressed: () {
+                            leading: IconButton(onPressed: (){
                 dataFonction.changeState(SignInState());
-              },
+              }, icon: IconConst.leftarrow),
             ),
             SingleChildScrollView(
               child: Padding(

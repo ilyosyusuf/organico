@@ -30,9 +30,9 @@ class SignUpView extends StatelessWidget {
           children: [
             AppBarWidget(
               text: "New Registration",
-              onPressed: () {
+              leading: IconButton(onPressed: (){
                 dataFunction.changeState(PhoneVerifyState());
-              },
+              }, icon: IconConst.leftarrow),
             ),
             Expanded(
               child: SingleChildScrollView(

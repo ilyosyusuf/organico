@@ -7,7 +7,7 @@ import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/screens/home/view/pages/cart/cart_view.dart';
 import 'package:organico/screens/home/view/pages/explore/explore_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
-import 'package:organico/screens/home/view/pages/profile/profile_view.dart';
+import 'package:organico/screens/home/view/pages/profile/profilemainview/profile_view.dart';
 import 'package:organico/widgets/tabbar/tabbar_widget.dart';
 
 class MainView extends StatelessWidget {

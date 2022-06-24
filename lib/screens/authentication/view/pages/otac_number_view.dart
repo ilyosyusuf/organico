@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
@@ -23,10 +24,13 @@ class OtacNumberView extends StatelessWidget {
         child: Column(
           children: [
             AppBarWidget(
-                onPressed: () {
-                  dataFonction.changeState(ForgotPasswordState());
-                },
-                text: "OTAC Number"),
+              text: "OTAC Number",
+              leading: IconButton(
+                  onPressed: () {
+                    dataFonction.changeState(ForgotPasswordState());
+                  },
+                  icon: IconConst.leftarrow),
+            ),
             SizedBox(height: context.h * 0.06),
             const Text("Enter Authorization Code", style: FStyles.headline3s),
             SizedBox(height: context.h * 0.03),
