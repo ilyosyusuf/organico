@@ -107,4 +107,18 @@ class HomeCubit extends Cubit<MainHomeState> {
   void radioButton(dynamic v){
     groupValue = v;
   }
+
+  List<String> cuponSubtitle = [
+    '7 days remaining',
+    '7 days remaining',
+    '7 days remaining',
+    '0 days remaining',
+  ];
+
+  List<String> cuponTitle = [
+    '15% Discount all item',
+    'Free Shipping',
+    '10% Discount all item',
+    'Free Shipping',
+  ];
 }

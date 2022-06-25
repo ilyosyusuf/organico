@@ -54,12 +54,16 @@ class HomeView extends StatelessWidget {
             ),
             SizedBox(height: context.h * 0.03),
             CouponListTileWidget(
+              
               leadingColor: ColorConst.whiteGreen,
               title: "You have 3 coupon",
               subtitle: Text("Let’s use this coupon", style: FStyles.headline5main),
               leadingChild: IconConst.coupon,
               trailing: IconConst.rightarrow,
-              onTap: () {},
+              onTap: () {
+              NavigationService.instance.pushNamed(routeName: '/coupon_view', args: context);
+
+              },
             ),
             SizedBox(height: context.h * 0.01),
             CategoryListTile(text: "Choose Category"),
