@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/screens/home/state/home_state.dart';
+import 'package:organico/services/product_data_service.dart';
 
 class HomeCubit extends Cubit<MainHomeState> {
   HomeCubit() : super(HomeState());
@@ -121,4 +122,20 @@ class HomeCubit extends Cubit<MainHomeState> {
     '10% Discount all item',
     'Free Shipping',
   ];
+
+List mostSearched = ['Onion', 'Watermelon', 'Blackurrant', 'Mushroom'];
+final Set searchedItems = {};
+  search(String text) {
+    for (var i = 0; i < ProductDataService.instance.productList[0].length; i++) {
+      if (text.isEmpty) {
+        searchedItems.clear();
+      } else if (ProductDataService.instance.productList[0][i]['name']
+          .toString()
+          .toLowerCase()
+          .contains(text.toString().toLowerCase())) {
+        debugPrint(ProductDataService.instance.productList[0][i]['name'].toString());
+        searchedItems.add(ProductDataService.instance.productList[0][i]);
+      }
+    }
+  }
 }

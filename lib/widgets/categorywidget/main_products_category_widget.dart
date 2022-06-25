@@ -11,9 +11,22 @@ import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/services/product_data_service.dart';
 
 class MainProductsCategoryWidget extends StatelessWidget {
-  // final Color color;
+  final Color color;
   final int index;
-  const MainProductsCategoryWidget({Key? key, required this.index}) : super(key: key);
+  final double height;
+  final String name;
+  final String image_url;
+  final String cost;
+  final String market;
+  const MainProductsCategoryWidget({Key? key,
+   required this.height,
+      required this.index,
+      required this.color,
+      required this.cost,
+      required this.image_url,
+      required this.market,
+       required this.name,
+   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +37,18 @@ class MainProductsCategoryWidget extends StatelessWidget {
         height: context.h * 0.27,
         width: context.w * 0.47,
         padding: PMconst.small,
-        decoration: BoxAllDecoration.decor(cubitData.colorList[index]),
+        decoration: BoxAllDecoration.decor(color),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: context.h * 0.1,child: Image.asset(ProductDataService.instance.productList[0][index]['image_url'].toString())),
+            SizedBox(height: height, child: Image.asset(image_url)),
             SizedBox(height: context.h * 0.01),
-            Text(ProductDataService.instance.productList[0][index]['name'].toString(), style: FStyles.headline4sbold),
-            Text(ProductDataService.instance.productList[0][index]['market'].toString(), style: FStyles.headline5main),
+            Text(name, style: FStyles.headline4sbold),
+            Text(market, style: FStyles.headline5main),
             SizedBox(height: context.h * 0.02),
             Row(
               children: [
-                Text('${ProductDataService.instance.productList[0][2]['cost']} / Kg', style: FStyles.headline4sbold),
+                Text('$cost / Kg', style: FStyles.headline4sbold),
                 const Spacer(),
                 IconConst.plusbutton
               ],

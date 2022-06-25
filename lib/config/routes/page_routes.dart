@@ -5,6 +5,7 @@ import 'package:organico/screens/home/view/mainview/main_view.dart';
 import 'package:organico/screens/home/view/pages/home/coupon/coupon_view.dart';
 import 'package:organico/screens/home/view/pages/home/details/details_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
+import 'package:organico/screens/home/view/pages/home/search/search_view.dart';
 import 'package:organico/screens/home/view/pages/profile/address/address_view.dart';
 import 'package:organico/screens/home/view/pages/profile/customs/custom_service_view.dart';
 import 'package:organico/screens/home/view/pages/profile/editprofile/changednumberconfirmation_view.dart';
@@ -59,6 +60,8 @@ class MyRoute {
         ));
       case '/coupon_view':
         return _pages(CouponView(forcontext: args as BuildContext,));
+            case '/search_view':
+        return _pages(SearchView(forcontext: args as BuildContext,));
     }
   }
 

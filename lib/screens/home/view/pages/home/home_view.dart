@@ -47,6 +47,9 @@ class HomeView extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.0),
               child: CupertinoSearchTextField(
+                onTap: (){
+                  NavigationService.instance.pushNamed(routeName: '/search_view', args: context);
+                },
                 placeholder: "Search anything here",
                 padding: PMconst.small,
                 borderRadius: BorderRadius.circular(15.0),
@@ -54,15 +57,15 @@ class HomeView extends StatelessWidget {
             ),
             SizedBox(height: context.h * 0.03),
             CouponListTileWidget(
-              
               leadingColor: ColorConst.whiteGreen,
               title: "You have 3 coupon",
-              subtitle: Text("Let’s use this coupon", style: FStyles.headline5main),
+              subtitle:
+                  Text("Let’s use this coupon", style: FStyles.headline5main),
               leadingChild: IconConst.coupon,
               trailing: IconConst.rightarrow,
               onTap: () {
-              NavigationService.instance.pushNamed(routeName: '/coupon_view', args: context);
-
+                NavigationService.instance
+                    .pushNamed(routeName: '/coupon_view', args: context);
               },
             ),
             SizedBox(height: context.h * 0.01),
@@ -79,28 +82,32 @@ class HomeView extends StatelessWidget {
             ),
             SizedBox(height: context.h * 0.03),
             CategoryListTile(text: "Best Selling"),
-                        Container(
+            Container(
               height: context.h * 0.27,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: data[0].length,
                 itemBuilder: (context, i) {
                   return InkWell(
-                    onTap: (){
-                      NavigationService.instance.pushNamed(routeName: '/detailsview', args: data[0][i]);
-                    },
-                    child: MainProductsCategoryWidget(index: i));
+                      onTap: () {
+                        NavigationService.instance.pushNamed(
+                            routeName: '/detailsview', args: data[0][i]);
+                      },
+                      child: MainProductsCategoryWidget(
+                        index: i,
+                        name: data[0][i]['name'],
+                        color: cubitData.colorList[i],
+                        height: context.h * 0.1,
+                        cost: data[0][i]['cost'].toString(),
+                        image_url: data[0][i]['image_url'].toString(),
+                        market: data[0][i]['market'],
+                      ));
                 },
               ),
             ),
-            
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
