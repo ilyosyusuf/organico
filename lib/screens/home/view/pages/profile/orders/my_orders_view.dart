@@ -5,6 +5,7 @@ import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/screens/home/view/pages/profile/orders/history_view.dart';
+import 'package:organico/screens/home/view/pages/profile/orders/ongoing_view.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 
 class MyOrdersView extends StatefulWidget {
@@ -37,7 +38,7 @@ class _MyOrdersViewState extends State<MyOrdersView>
     child: Column(
       children: [
         AppBarWidget(
-          text: "Change Password",
+          text: "My Orders",
           leading: IconButton(
               onPressed: () {
                 NavigationService.instance.pop("");
@@ -47,7 +48,7 @@ class _MyOrdersViewState extends State<MyOrdersView>
         MyTabbar(),
         Expanded(
             child: TabBarView(controller: _tabController, children: [
-          Container(color: ColorConst.blackPink),
+          OnGoingView(forcontext: context),
           HistoryView(forcontext: context),
         ]))
       ],
