@@ -78,6 +78,7 @@ class HomeCubit extends Cubit<MainHomeState> {
   TextEditingController cardNumberController = TextEditingController();
   TextEditingController ccvController = TextEditingController();
   TextEditingController expiresController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
 
   bool _isShown = true;
 

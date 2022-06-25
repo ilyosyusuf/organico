@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:organico/screens/authentication/view/mainauthview/main_auth_view.dart';
 import 'package:organico/screens/authentication/view/pages/splash_view.dart';
 import 'package:organico/screens/home/view/mainview/main_view.dart';
+import 'package:organico/screens/home/view/pages/home/details/details_view.dart';
+import 'package:organico/screens/home/view/pages/home/home_view.dart';
 import 'package:organico/screens/home/view/pages/profile/address/address_view.dart';
+import 'package:organico/screens/home/view/pages/profile/customs/custom_service_view.dart';
 import 'package:organico/screens/home/view/pages/profile/editprofile/changednumberconfirmation_view.dart';
 import 'package:organico/screens/home/view/pages/profile/editprofile/edit_profile_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_settings_view.dart';
@@ -45,6 +48,14 @@ class MyRoute {
             ChangedNumberConfirmationView(forcontext: args as BuildContext));
       case '/addpaymentmethodview':
         return _pages(AddPaymentMethodView(forcontext: args as BuildContext));
+            case '/customerserviceview':
+        return _pages(CustomerServiceView(forcontext: args as BuildContext));
+            case '/home':
+        return _pages(HomeView());
+      case '/detailsview':
+        return _pages(DetailsView(
+          product: args as Map,
+        ));
     }
   }
 

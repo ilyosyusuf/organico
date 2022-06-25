@@ -71,7 +71,11 @@ class ProfileView extends StatelessWidget {
                       } else if (i == 4) {
                         NavigationService.instance
                             .pushNamed(routeName: '/paymentmethodview', args: context);
-                      } else if (i == 6) {
+                      } else if (i == 5) {
+                        NavigationService.instance.pushNamed(
+                            routeName: '/customerserviceview', args: context);
+                      }
+                       else if (i == 6) {
                         NavigationService.instance.pushNamed(
                             routeName: '/changepasswordview', args: context);
                       }

@@ -17,7 +17,7 @@ class ProfileListTileWidget extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.leading,
-    this.subtitle
+    this.subtitle,
   }) : super(key: key);
 
   @override
@@ -27,8 +27,7 @@ class ProfileListTileWidget extends StatelessWidget {
         leading: leading,
         title: Text(title, style: FStyles.headline5bold),
         subtitle: subtitle,
-        trailing: IconConst.rightarrow,
-
+        trailing: trailing,
         );
   }
 }

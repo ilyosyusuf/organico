@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/components/box_full_decoration.dart';
 import 'package:organico/core/components/box_only_decoration.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
@@ -80,7 +81,11 @@ class HomeView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: data[0].length,
                 itemBuilder: (context, i) {
-                  return MainProductsCategoryWidget(index: i);
+                  return InkWell(
+                    onTap: (){
+                      NavigationService.instance.pushNamed(routeName: '/detailsview', args: data[0][i]);
+                    },
+                    child: MainProductsCategoryWidget(index: i));
                 },
               ),
             ),
