@@ -18,6 +18,8 @@ class IconConst{
   static final SvgPicture clock = SvgPicture.asset('assets/icons/Clock.svg');
   static final SvgPicture tag = SvgPicture.asset('assets/icons/Tag.svg');
   static final SvgPicture xIcon = SvgPicture.asset('assets/icons/x.svg');
+  static final SvgPicture pinlocation = SvgPicture.asset('assets/icons/PinLocation.svg');
+  static final SvgPicture location = SvgPicture.asset('assets/icons/Location.svg');
 
   static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
   static final SvgPicture settings = SvgPicture.asset('assets/icons/Settings.svg');

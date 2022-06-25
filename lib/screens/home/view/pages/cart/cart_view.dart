@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/components/box_full_decoration.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
@@ -108,7 +109,9 @@ class CartView extends StatelessWidget {
                 width: context.w * 0.6,
                 height: context.h * 0.06,
                 child: const Text("Add to bag"),
-                onPressed: () {})
+                onPressed: () {
+                  NavigationService.instance.pushNamed(routeName: '/orderstatusview', args: context);
+                })
           ],
         ),
       ),

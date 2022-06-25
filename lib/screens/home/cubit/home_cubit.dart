@@ -89,8 +89,6 @@ class HomeCubit extends Cubit<MainHomeState> {
     _isShown = !_isShown;
   }
 
-
-
   final imagePicker = ImagePicker();
   XFile? image;
 
@@ -98,14 +96,14 @@ class HomeCubit extends Cubit<MainHomeState> {
     image = (await imagePicker.pickImage(source: ImageSource.gallery))!;
     // emit(HomeState());
   }
-  
-    changeState(MainHomeState state) {
+
+  changeState(MainHomeState state) {
     emit(state);
   }
 
   String groupValue = "radios";
 
-  void radioButton(dynamic v){
+  void radioButton(dynamic v) {
     groupValue = v;
   }
 
@@ -123,19 +121,52 @@ class HomeCubit extends Cubit<MainHomeState> {
     'Free Shipping',
   ];
 
-List mostSearched = ['Onion', 'Watermelon', 'Blackurrant', 'Mushroom'];
-final Set searchedItems = {};
+  List mostSearched = ['Onion', 'Watermelon', 'Blackurrant', 'Mushroom'];
+  final Set searchedItems = {};
   search(String text) {
-    for (var i = 0; i < ProductDataService.instance.productList[0].length; i++) {
+    for (var i = 0;
+        i < ProductDataService.instance.productList[0].length;
+        i++) {
       if (text.isEmpty) {
         searchedItems.clear();
       } else if (ProductDataService.instance.productList[0][i]['name']
           .toString()
           .toLowerCase()
           .contains(text.toString().toLowerCase())) {
-        debugPrint(ProductDataService.instance.productList[0][i]['name'].toString());
+        debugPrint(
+            ProductDataService.instance.productList[0][i]['name'].toString());
         searchedItems.add(ProductDataService.instance.productList[0][i]);
       }
     }
   }
+
+  // Lists for order status view
+  List overviewNames = [
+    "Order ID",
+    "Shop Name",
+    "Date",
+    "Notes",
+  ];
+
+  List overviewDetails = [
+    "20210302001",
+    "Popey Shop - New York",
+    "02 Mar 2021",
+    "Please check the product before packaging.",
+  ];
+
+  // List for total in order status view
+  List totalNames = [
+    "Subtotal",
+    "Delivery charge",
+    "Coupon",
+    "Total",
+  ];
+
+  List totalCosts = [
+    "\$9.98",
+    "\$1",
+    "-\$1",
+    "\$9.98",
+  ];
 }
