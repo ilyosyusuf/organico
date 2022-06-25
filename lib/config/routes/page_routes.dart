@@ -8,6 +8,7 @@ import 'package:organico/screens/home/view/pages/profile/editprofile/edit_profil
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_settings_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_view.dart';
 import 'package:organico/screens/home/view/pages/profile/password/change_password_view.dart';
+import 'package:organico/screens/home/view/pages/profile/paymentmethod/add_payment_method_view.dart';
 import 'package:organico/screens/home/view/pages/profile/paymentmethod/payment_method_view.dart';
 import 'package:organico/screens/home/view/pages/profile/profilemainview/profile_view.dart';
 
@@ -34,13 +35,16 @@ class MyRoute {
       case '/changepasswordview':
         return _pages(ChangePasswordView(forcontext: args as BuildContext));
       case '/paymentmethodview':
-        return _pages(PaymentMethodView());
+        return _pages(PaymentMethodView(forcontext: args as BuildContext));
       case '/addressview':
         return _pages(AddressView());
-            case '/editprofileview':
+      case '/editprofileview':
         return _pages(EditProfileView(forcontext: args as BuildContext));
-                  case '/changednumberconfirmationview':
-        return _pages(ChangedNumberConfirmationView(forcontext: args as BuildContext));
+      case '/changednumberconfirmationview':
+        return _pages(
+            ChangedNumberConfirmationView(forcontext: args as BuildContext));
+      case '/addpaymentmethodview':
+        return _pages(AddPaymentMethodView(forcontext: args as BuildContext));
     }
   }
 

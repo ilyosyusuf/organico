@@ -75,6 +75,9 @@ class HomeCubit extends Cubit<MainHomeState> {
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController locationController = TextEditingController();
+  TextEditingController cardNumberController = TextEditingController();
+  TextEditingController ccvController = TextEditingController();
+  TextEditingController expiresController = TextEditingController();
 
   bool _isShown = true;
 
@@ -96,5 +99,11 @@ class HomeCubit extends Cubit<MainHomeState> {
   
     changeState(MainHomeState state) {
     emit(state);
+  }
+
+  String groupValue = "radios";
+
+  void radioButton(dynamic v){
+    groupValue = v;
   }
 }

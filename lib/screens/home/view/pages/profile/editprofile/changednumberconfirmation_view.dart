@@ -17,72 +17,75 @@ import 'package:organico/widgets/textform/text_form_widget.dart';
 
 class ChangedNumberConfirmationView extends StatelessWidget {
   final BuildContext forcontext;
-  const ChangedNumberConfirmationView({Key? key, required this.forcontext}) : super(key: key);
+  const ChangedNumberConfirmationView({Key? key, required this.forcontext})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return confirmationScaffold(forcontext);
   }
 
   Scaffold confirmationScaffold(BuildContext context) {
-        var data = context.watch<HomeCubit>();
+    var data = context.watch<HomeCubit>();
     var dataFonction = context.read<HomeCubit>();
     return Scaffold(
-    body: SafeArea(
-      child: Column(
-        children: [
-          AppBarWidget(
-            text: "OTAC Number",
-            leading: IconButton(
-                onPressed: () {
-                  // dataFonction.changeState(ForgotPasswordState());
-                },
-                icon: IconConst.leftarrow),
-          ),
-          SizedBox(height: context.h * 0.05),
-          Padding(
-            padding: PMconst.small,
-            child: Text("It looks like you changed your phone number. Please enter the OTAC number that we have sent to your new phone number.", style: FStyles.headline5main),
-          ),
-          SizedBox(height: context.h * 0.03),
-          Padding(
-            padding: PMconst.small,
-            child: Column(
-              children: [
-                MyTextField.textField(
-                    text: "6 Digit Code",
-                    controller: data.confirmationController),
-                Padding(
-                  padding: PMconst.extraSmall,
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    height: context.h * 0.03,
-                    width: context.h,
-                    child: InkWell(
-                      onTap: () {},
-                      child: const Text(
-                        "Resend Code",
-                        style: FStyles.headline5text,
+      body: SafeArea(
+        child: Column(
+          children: [
+            AppBarWidget(
+              text: "OTAC Number",
+              leading: IconButton(
+                  onPressed: () {
+                    NavigationService.instance.pop("");
+                  },
+                  icon: IconConst.leftarrow),
+            ),
+            SizedBox(height: context.h * 0.05),
+            const Padding(
+              padding: PMconst.small,
+              child: Text(
+                  "It looks like you changed your phone number. Please enter the OTAC number that we have sent to your new phone number.",
+                  style: FStyles.headline5main),
+            ),
+            SizedBox(height: context.h * 0.03),
+            Padding(
+              padding: PMconst.small,
+              child: Column(
+                children: [
+                  MyTextField.textField(
+                      text: "6 Digit Code",
+                      controller: data.confirmationController),
+                  Padding(
+                    padding: PMconst.extraSmall,
+                    child: Container(
+                      alignment: Alignment.centerRight,
+                      height: context.h * 0.03,
+                      width: context.h,
+                      child: InkWell(
+                        onTap: () {},
+                        child: const Text(
+                          "Resend Code",
+                          style: FStyles.headline5text,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: context.h * 0.03),
-                ElevatedButtonWidget(
-                    height: context.h * 0.06,
-                    width: context.w,
-                    child: const Text("Next"),
-                    onPressed: () {
-                      NavigationService.instance.pushNamedAndRemoveUntil("/mainview");
-                      dataFonction.changeState(ProfileState());
-                    })
-              ],
+                  SizedBox(height: context.h * 0.03),
+                  ElevatedButtonWidget(
+                      height: context.h * 0.06,
+                      width: context.w,
+                      child: const Text("Next"),
+                      onPressed: () {
+                        NavigationService.instance
+                            .pushNamedAndRemoveUntil("/mainview");
+                        dataFonction.changeState(ProfileState());
+                      })
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }
