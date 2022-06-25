@@ -13,7 +13,7 @@ import 'package:organico/widgets/listtilewidgets/coupon_list_tile.dart';
 
 class CouponView extends StatelessWidget {
   final BuildContext forcontext;
-  const CouponView({required this.forcontext,Key? key}) : super(key: key);
+  const CouponView({required this.forcontext, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,48 +24,55 @@ class CouponView extends StatelessWidget {
     var data = context.watch<HomeCubit>();
 
     return Scaffold(
-      
-    body: SafeArea(
+      body: SafeArea(
         bottom: false,
         child: Column(
-      children: [
-        AppBarWidget(
-          leading: IconButton(onPressed: (){
-NavigationService.instance.pop("");
-          }, icon: IconConst.leftarrow),
-          text: 'Cupon'),
-        Padding(
-          padding: PMconst.medium,
-          child: SizedBox(
-            height: context.h * 0.8,
-            child: ListView.builder(
-                itemCount: data.cuponSubtitle.length,
-                itemBuilder: (_, __) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: forcontext.h * 0.02),
-                    child: CouponListTileWidget(
-                        listTileColor: __ != 3 ? ColorConst.whitePink : ColorConst.white,
-                        leadingColor: ColorConst.whitePink,
-                        leadingChild: Container(
-                                  width: context.w * 0.12,
-                                  height: context.w * 0.12,
-                                  padding: PMconst.extraSmall,
-                                  child: IconConst.coupon,
-                                  decoration: BoxOnlyDecoration.decor(
-                                      ColorConst.white,
-                                      bottomLeft: 10.0,
-                                      bottomRight: 10.0,
-                                      topLeft: 10.0,
-                                      topRight: 10.0),
-                                ),
-                        title: data.cuponTitle[__],
-                        subtitle: Text(data.cuponSubtitle[__], style: FStyles.headline5main,)),
-                  );
-                }),
-          ),
-        )
-      ],
-    )),
-  );
+          children: [
+            AppBarWidget(
+                leading: IconButton(
+                    onPressed: () {
+                      NavigationService.instance.pop("");
+                    },
+                    icon: IconConst.leftarrow),
+                text: 'Your Cupon'),
+            Padding(
+              padding: PMconst.medium,
+              child: SizedBox(
+                height: context.h * 0.8,
+                child: ListView.builder(
+                  itemCount: data.cuponSubtitle.length,
+                  itemBuilder: (context, i) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: forcontext.h * 0.02),
+                      child: Container(
+                        height: context.h * 0.11,
+                        alignment: Alignment.center,
+                        decoration: BoxOnlyDecoration.decor(
+                          i != 3 ? ColorConst.blackPink : ColorConst.whiteGreen,
+                          topLeft: 15.0,
+                          topRight: 15.0,
+                          bottomLeft: 15.0,
+                          bottomRight: 15.0,
+                        ),
+                        child: CouponListTileWidget(
+                          listTileColor: Colors.transparent,
+                          leadingColor: ColorConst.white,
+                          leadingChild: IconConst.coupon,
+                          title: data.cuponTitle[i],
+                          subtitle: Text(
+                            data.cuponSubtitle[i],
+                            style: FStyles.headline5main,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

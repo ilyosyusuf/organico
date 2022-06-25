@@ -93,7 +93,7 @@ class DetailsView extends StatelessWidget {
                                       width: context.w * 0.1,
                                       child: const Center(
                                           child: Text(
-                                        '14',
+                                        '1',
                                         style: FStyles.headline4sbold,
                                       ))),
                                   IconConst.plusbutton
