@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/screens/home/state/home_state.dart';
@@ -71,6 +72,9 @@ class HomeCubit extends Cubit<MainHomeState> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController newpasswordController = TextEditingController();
   TextEditingController confirmationController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
 
   bool _isShown = true;
 
@@ -78,5 +82,19 @@ class HomeCubit extends Cubit<MainHomeState> {
 
   void obSecure() {
     _isShown = !_isShown;
+  }
+
+
+
+  final imagePicker = ImagePicker();
+  XFile? image;
+
+  void fromGallery() async {
+    image = (await imagePicker.pickImage(source: ImageSource.gallery))!;
+    // emit(HomeState());
+  }
+  
+    changeState(MainHomeState state) {
+    emit(state);
   }
 }

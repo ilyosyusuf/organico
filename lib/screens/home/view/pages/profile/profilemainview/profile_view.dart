@@ -8,6 +8,7 @@ import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/state/home_state.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/listtilewidgets/profile_list_tile_widget.dart';
 
@@ -17,6 +18,7 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubitData = context.watch<HomeCubit>();
+    var cubitDataFunction = context.read<HomeCubit>();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -60,6 +62,11 @@ class ProfileView extends StatelessWidget {
                       title: cubitData.titleList[i],
                     ),
                     onTap: () {
+                      if (i == 0) {
+                        NavigationService.instance
+                            .pushNamed(routeName: '/editprofileview', args: context);
+                        // cubitDataFunction.changeState(EditProfileState());
+                      } else
                       if (i == 3) {
                         NavigationService.instance
                             .pushNamed(routeName: '/addressview');

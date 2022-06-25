@@ -16,6 +16,10 @@ class ProfileState extends MainHomeState{
   ProfileState();
 }
 
+class EditProfileState extends MainHomeState{
+  EditProfileState();
+}
+
 class ErrorState extends MainHomeState{
   ErrorState();
 }

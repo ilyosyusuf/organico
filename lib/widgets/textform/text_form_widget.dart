@@ -15,6 +15,7 @@ class MyTextField {
     FormFieldValidator<String>? validator,
     bool isShown = false,
     List<TextInputFormatter>? inputFormatters,
+    int? maxlines = 1,
   }) {
     return TextFormField(
         controller: controller,
@@ -23,6 +24,7 @@ class MyTextField {
         onTap: onTap,
         obscureText: isShown,
         inputFormatters: inputFormatters,
+        maxLines: maxlines,
         decoration: InputDecoration(
           contentPadding: PMconst.small,
           hintText: text,

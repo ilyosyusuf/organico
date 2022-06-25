@@ -18,107 +18,112 @@ class ChangePasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var data = context.watch<HomeCubit>();
+
+    return forgotPasswordScaffold(forcontext);
+  }
+
+  Scaffold forgotPasswordScaffold(BuildContext context) {
+        var data = context.watch<HomeCubit>();
     var dataFunction = context.read<HomeCubit>();
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: Column(
-          children: [
-            AppBarWidget(
-              text: "Reset Password",
-              leading: IconButton(
-                  onPressed: () {
-                    // dataFunction.changeState(SignInState());
-                  },
-                  icon: IconConst.leftarrow),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: PMconst.medium,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                          "Please fill in the field below to change your current password.",
-                          style: FStyles.headline5main),
-                      SizedBox(height: context.h * 0.03),
-                      const Text("Current Password",
-                          style: FStyles.headline4text),
-                      SizedBox(height: context.h * 0.01),
-                      StatefulBuilder(
-                        builder: ((context, setState) {
-                          return MyTextField.textField(
-                              text: "Current Password",
-                              controller: data.passwordController,
-                              isShown: data.getShown,
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    dataFunction.obSecure();
-                                    setState(() {});
-                                  },
-                                  iconSize: 40,
-                                  icon: IconConst.eye));
-                        }),
-                      ),
-                      SizedBox(height: context.h * 0.02),
-                      const Text("New Password", style: FStyles.headline4text),
-                      SizedBox(height: context.h * 0.01),
-                      StatefulBuilder(
-                        builder: ((context, setState) {
-                          return MyTextField.textField(
-                            text: "New Password",
-                            controller: data.newpasswordController,
+    resizeToAvoidBottomInset: false,
+    body: SafeArea(
+      child: Column(
+        children: [
+          AppBarWidget(
+            text: "Reset Password",
+            leading: IconButton(
+                onPressed: () {
+                  // dataFunction.changeState(SignInState());
+                },
+                icon: IconConst.leftarrow),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: PMconst.medium,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                        "Please fill in the field below to change your current password.",
+                        style: FStyles.headline5main),
+                    SizedBox(height: context.h * 0.03),
+                    const Text("Current Password",
+                        style: FStyles.headline4text),
+                    SizedBox(height: context.h * 0.01),
+                    StatefulBuilder(
+                      builder: ((context, setState) {
+                        return MyTextField.textField(
+                            text: "Current Password",
+                            controller: data.passwordController,
                             isShown: data.getShown,
                             suffixIcon: IconButton(
-                                iconSize: 40,
                                 onPressed: () {
                                   dataFunction.obSecure();
                                   setState(() {});
                                 },
-                                icon: IconConst.eye),
-                          );
-                        }),
-                      ),
-                      SizedBox(height: context.h * 0.02),
-                      const Text("New Password Confirmation",
-                          style: FStyles.headline4text),
-                      SizedBox(height: context.h * 0.01),
-                      StatefulBuilder(
-                        builder: ((context, setState) {
-                          return MyTextField.textField(
-                            text: "New Password Confirmation",
-                            controller: data.confirmationController,
-                            isShown: data.getShown,
-                            suffixIcon: IconButton(
                                 iconSize: 40,
-                                onPressed: () {
-                                  dataFunction.obSecure();
-                                  setState(() {});
-                                },
-                                icon: IconConst.eye),
-                          );
-                        }),
-                      ),
-                      SizedBox(height: context.h * 0.04),
-                      ElevatedButtonWidget(
-                          height: context.h * 0.06,
-                          width: context.w,
-                          child: const Text(
-                            "Save Password",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: () {}),
-                    ],
-                  ),
+                                icon: IconConst.eye));
+                      }),
+                    ),
+                    SizedBox(height: context.h * 0.02),
+                    const Text("New Password", style: FStyles.headline4text),
+                    SizedBox(height: context.h * 0.01),
+                    StatefulBuilder(
+                      builder: ((context, setState) {
+                        return MyTextField.textField(
+                          text: "New Password",
+                          controller: data.newpasswordController,
+                          isShown: data.getShown,
+                          suffixIcon: IconButton(
+                              iconSize: 40,
+                              onPressed: () {
+                                dataFunction.obSecure();
+                                setState(() {});
+                              },
+                              icon: IconConst.eye),
+                        );
+                      }),
+                    ),
+                    SizedBox(height: context.h * 0.02),
+                    const Text("New Password Confirmation",
+                        style: FStyles.headline4text),
+                    SizedBox(height: context.h * 0.01),
+                    StatefulBuilder(
+                      builder: ((context, setState) {
+                        return MyTextField.textField(
+                          text: "New Password Confirmation",
+                          controller: data.confirmationController,
+                          isShown: data.getShown,
+                          suffixIcon: IconButton(
+                              iconSize: 40,
+                              onPressed: () {
+                                dataFunction.obSecure();
+                                setState(() {});
+                              },
+                              icon: IconConst.eye),
+                        );
+                      }),
+                    ),
+                    SizedBox(height: context.h * 0.04),
+                    ElevatedButtonWidget(
+                        height: context.h * 0.06,
+                        width: context.w,
+                        child: const Text(
+                          "Save Password",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {}),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
+    ),
+  );
   }
 }
