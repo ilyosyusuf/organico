@@ -62,20 +62,22 @@ class ProfileView extends StatelessWidget {
                     ),
                     onTap: () {
                       if (i == 0) {
+                        NavigationService.instance.pushNamed(
+                            routeName: '/editprofileview', args: context);
+                      }
+                      if (i == 1) {
                         NavigationService.instance
-                            .pushNamed(routeName: '/editprofileview', args: context);
-                      } else
-                      if (i == 3) {
+                            .pushNamed(routeName: '/myordersview', args: context);
+                      } else if (i == 3) {
                         NavigationService.instance
                             .pushNamed(routeName: '/addressview');
                       } else if (i == 4) {
-                        NavigationService.instance
-                            .pushNamed(routeName: '/paymentmethodview', args: context);
+                        NavigationService.instance.pushNamed(
+                            routeName: '/paymentmethodview', args: context);
                       } else if (i == 5) {
                         NavigationService.instance.pushNamed(
                             routeName: '/customerserviceview', args: context);
-                      }
-                       else if (i == 6) {
+                      } else if (i == 6) {
                         NavigationService.instance.pushNamed(
                             routeName: '/changepasswordview', args: context);
                       }

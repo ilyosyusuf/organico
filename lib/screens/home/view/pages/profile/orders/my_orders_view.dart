@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
+import 'package:organico/core/constants/colors/color_const.dart';
+import 'package:organico/core/constants/icons/icon_const.dart';
+import 'package:organico/screens/home/view/pages/profile/orders/history_view.dart';
+import 'package:organico/widgets/apbar/app_bar_widget.dart';
+
+class MyOrdersView extends StatefulWidget {
+  final BuildContext forcontext;
+  const MyOrdersView({Key? key, required this.forcontext}) : super(key: key);
+
+  @override
+  State<MyOrdersView> createState() => _MyOrdersViewState();
+}
+
+class _MyOrdersViewState extends State<MyOrdersView>
+    with TickerProviderStateMixin {
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext forcontext) {
+    return myOrderScaffold(forcontext);
+  }
+
+  Scaffold myOrderScaffold(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+    child: Column(
+      children: [
+        AppBarWidget(
+          text: "Change Password",
+          leading: IconButton(
+              onPressed: () {
+                NavigationService.instance.pop("");
+              },
+              icon: IconConst.leftarrow),
+        ),
+        MyTabbar(),
+        Expanded(
+            child: TabBarView(controller: _tabController, children: [
+          Container(color: ColorConst.blackPink),
+          HistoryView(forcontext: context),
+        ]))
+      ],
+    ),
+  ));
+  }
+
+  TabBar MyTabbar() => TabBar(
+          controller: _tabController,
+          labelColor: ColorConst.kPrimaryColor,
+          unselectedLabelColor: ColorConst.mainColor,
+          indicatorColor: ColorConst.kPrimaryColor,
+          tabs: [
+            Tab(
+              text: "Ongoing",
+            ),
+            Tab(text: "History"),
+          ]);
+}

@@ -97,7 +97,9 @@ class OrderStatusView extends StatelessWidget {
                       height: context.h * 0.12,
                       containerChild: OrdersListViewWidget(
                           imageData: data.categoriesList,
-                          colorData: data.colorList),
+                          colorData: data.colorList,
+                          itemCount: 2,
+                          ),
                       ),
                     SizedBox(height: context.h * 0.03),
                     Text("Delivery", style: FStyles.headline4sbold),

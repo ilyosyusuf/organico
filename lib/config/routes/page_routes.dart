@@ -13,6 +13,7 @@ import 'package:organico/screens/home/view/pages/profile/editprofile/changednumb
 import 'package:organico/screens/home/view/pages/profile/editprofile/edit_profile_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_settings_view.dart';
 import 'package:organico/screens/home/view/pages/profile/notifications/notification_view.dart';
+import 'package:organico/screens/home/view/pages/profile/orders/my_orders_view.dart';
 import 'package:organico/screens/home/view/pages/profile/password/change_password_view.dart';
 import 'package:organico/screens/home/view/pages/profile/paymentmethod/add_payment_method_view.dart';
 import 'package:organico/screens/home/view/pages/profile/paymentmethod/payment_method_view.dart';
@@ -51,20 +52,28 @@ class MyRoute {
             ChangedNumberConfirmationView(forcontext: args as BuildContext));
       case '/addpaymentmethodview':
         return _pages(AddPaymentMethodView(forcontext: args as BuildContext));
-            case '/customerserviceview':
+      case '/customerserviceview':
         return _pages(CustomerServiceView(forcontext: args as BuildContext));
-            case '/home':
+      case '/home':
         return _pages(HomeView());
       case '/detailsview':
         return _pages(DetailsView(
           product: args as Map,
         ));
       case '/coupon_view':
-        return _pages(CouponView(forcontext: args as BuildContext,));
-            case '/search_view':
-        return _pages(SearchView(forcontext: args as BuildContext,));
-                  case '/orderstatusview':
-        return _pages(OrderStatusView(forcontext: args as BuildContext,));
+        return _pages(CouponView(
+          forcontext: args as BuildContext,
+        ));
+      case '/search_view':
+        return _pages(SearchView(
+          forcontext: args as BuildContext,
+        ));
+      case '/orderstatusview':
+        return _pages(OrderStatusView(
+          forcontext: args as BuildContext,
+        ));
+      case '/myordersview':
+        return _pages(MyOrdersView(forcontext: args as BuildContext));
     }
   }
 
