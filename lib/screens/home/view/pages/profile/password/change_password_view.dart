@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
@@ -31,10 +32,10 @@ class ChangePasswordView extends StatelessWidget {
       child: Column(
         children: [
           AppBarWidget(
-            text: "Reset Password",
+            text: "Change Password",
             leading: IconButton(
                 onPressed: () {
-                  // dataFunction.changeState(SignInState());
+                  NavigationService.instance.pop("");
                 },
                 icon: IconConst.leftarrow),
           ),

@@ -113,9 +113,11 @@ class EditProfileView extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: ElevatedButtonWidget(
-          height: context.h * 0.06, child: Text("Save"), onPressed: () {}),
+          height: context.h * 0.06, 
+          child: Text("Save"), onPressed: () {
+            NavigationService.instance.pushNamed(routeName: '/changednumberconfirmationview', args: context);
+          }),
     );
   }
 }
