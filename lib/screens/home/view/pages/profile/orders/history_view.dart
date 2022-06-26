@@ -81,9 +81,7 @@ class HistoryView extends StatelessWidget {
                         ElevatedButtonWidget(
                             width: context.w * 0.5,
                             child: Text("Order again"),
-                            onPressed: () {
-                              
-                            })
+                            onPressed: () {})
                       ],
                     ),
                   ),
