@@ -1,16 +1,15 @@
 # organico
 
-A new Flutter project.
+<h2>Registration View</h2>
 
-## Getting Started
+![1](https://user-images.githubusercontent.com/97497314/175829439-cce13479-1222-49d4-bc03-21984f01fad6.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<h2>Home Main View</h2>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![2](https://user-images.githubusercontent.com/97497314/175829502-7b3b2097-cb4d-4cf8-b2b5-80aa94109f62.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+<h2>Other Views</h2>
+
+![3](https://user-images.githubusercontent.com/97497314/175829521-52b94dea-7ff5-4a0d-a21c-3a5f2ccdf7cf.png)
