@@ -81,7 +81,8 @@ class HomeView extends StatelessWidget {
                       NavigationService.instance.pushNamed(
                             routeName: '/categorydetailsview', args: [
                               i,
-                              context
+                              context,
+                              cubitData.categoriesName[i]
                             ]);
 
                     },

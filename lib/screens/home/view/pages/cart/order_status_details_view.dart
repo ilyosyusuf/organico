@@ -67,7 +67,7 @@ class OrderStatusDetailsView extends StatelessWidget {
                           return Padding(
                             padding: EdgeInsets.only(bottom: context.h * 0.038),
                             child: OrderStatusWidget(
-                              color: i == 0 ? ColorConst.grey.withOpacity(0.5) : i == 1 ? ColorConst.grey.withOpacity(0.5) :  i == 2 ? ColorConst.blackPink : i == 3 ? ColorConst.blackPink : ColorConst.white,
+                              color: i == 0 ? ColorConst.whiteblue : i == 1 ? ColorConst.whiteblue :  i == 2 ? ColorConst.blackPink : i == 3 ? ColorConst.blackPink : ColorConst.white,
                                 subtitle: context.watch<HomeCubit>().orderStatusSubTitles[i], title: context.watch<HomeCubit>().orderStatusTitles[i]),
                           );
                         }))

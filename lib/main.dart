@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Organico',
-      theme: HomeCubit.isDark ? AppTheme.instance.appDarkTheme :  AppTheme.instance.appLightTheme,
+      // theme: HomeCubit.isDark ? AppTheme.instance.appDarkTheme :  AppTheme.instance.appLightTheme,
+      theme: AppTheme.instance.appDarkTheme,
       navigatorKey: NavigationService.instance.navigatorKey,
       initialRoute: '/splashview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,

@@ -40,7 +40,6 @@ class HomeCubit extends Cubit<MainHomeState> {
     ColorConst.whiteGreen,
     ColorConst.whitePink,
     ColorConst.whiteYellow,
-    ColorConst.blackPink,
     ColorConst.whiteGreen,
     ColorConst.whitePink,
     ColorConst.whiteYellow,
