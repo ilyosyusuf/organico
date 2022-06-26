@@ -30,7 +30,7 @@ class MainProductsCategoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubitData = context.watch<HomeCubit>();
+    // var cubitData = context.watch<HomeCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 18.0),
       child: Container(

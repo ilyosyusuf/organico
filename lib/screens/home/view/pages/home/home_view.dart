@@ -76,7 +76,16 @@ class HomeView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: cubitData.categoriesName.length,
                 itemBuilder: (context, i) {
-                  return CategoriesWidget(index: i);
+                  return InkWell(
+                    onTap: (){
+                      NavigationService.instance.pushNamed(
+                            routeName: '/categorydetailsview', args: [
+                              i,
+                              context
+                            ]);
+
+                    },
+                    child: CategoriesWidget(index: i));
                 },
               ),
             ),

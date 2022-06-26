@@ -4,6 +4,7 @@ import 'package:organico/screens/authentication/view/pages/splash_view.dart';
 import 'package:organico/screens/home/view/mainview/main_view.dart';
 import 'package:organico/screens/home/view/pages/cart/bag_view.dart';
 import 'package:organico/screens/home/view/pages/cart/order_status_view.dart';
+import 'package:organico/screens/home/view/pages/home/categorydetails/category_details_view.dart';
 import 'package:organico/screens/home/view/pages/home/coupon/coupon_view.dart';
 import 'package:organico/screens/home/view/pages/home/details/details_view.dart';
 import 'package:organico/screens/home/view/pages/home/home_view.dart';
@@ -77,6 +78,8 @@ class MyRoute {
         return _pages(MyOrdersView(forcontext: args as BuildContext));
             case '/bagview':
         return _pages(BagView(newcontext: args as BuildContext));
+                  case '/categorydetailsview':
+        return _pages(CategoryDetailsView(data: args as List));
     }
   }
 
