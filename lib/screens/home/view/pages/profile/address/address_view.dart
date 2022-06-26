@@ -6,6 +6,7 @@ import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/buttons/elevated_button.dart';
 import 'package:organico/widgets/listtilewidgets/profile_list_tile_widget.dart';
@@ -25,7 +26,7 @@ class AddressView extends StatelessWidget {
                   onPressed: () {
                     NavigationService.instance.pop("");
                   },
-                  icon: IconConst.leftarrow),
+                  icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
             ),
             Padding(
               padding: PMconst.medium,

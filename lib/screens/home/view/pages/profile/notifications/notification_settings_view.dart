@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
 import 'package:organico/core/font/font_style.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 
 class NotificationSettingsView extends StatelessWidget {
@@ -21,7 +22,7 @@ class NotificationSettingsView extends StatelessWidget {
                   onPressed: () {
                     NavigationService.instance.pop("");
                   },
-                  icon: IconConst.leftarrow),
+                  icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
             ),
             SwitchListTile.adaptive(
                 title: Text("In App Notification", style: FStyles.headline4s),

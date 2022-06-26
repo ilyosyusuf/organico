@@ -22,7 +22,7 @@ class ExploreView extends StatelessWidget {
           children: [
             AppBarWidget(text: "Explore", trailing: IconButton(onPressed: (){
                     cubitDataFunction.changeTheme(ExploreState());
-            }, icon: IconConst.sort)),
+            }, icon: HomeCubit.isDark ? IconConst.sortwhite : IconConst.sort,)),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(right: 18.0, top: 10.0),

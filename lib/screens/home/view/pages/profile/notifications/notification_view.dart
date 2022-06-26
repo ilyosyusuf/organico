@@ -27,7 +27,7 @@ class NotificationView extends StatelessWidget {
                   onPressed: () {
                     NavigationService.instance.pop("");
                   },
-                  icon: IconConst.leftarrow),
+                  icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
               trailing: IconButton(onPressed: () {
                 NavigationService.instance.pushNamed(routeName: '/notificationsettingsview');
               }, icon: IconConst.settings),

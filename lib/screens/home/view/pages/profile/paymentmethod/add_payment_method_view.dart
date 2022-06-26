@@ -32,7 +32,7 @@ class AddPaymentMethodView extends StatelessWidget {
             text: "Add Payment Method",
             leading: IconButton(onPressed: () {
               NavigationService.instance.pop("");
-            }, icon: IconConst.leftarrow),
+            }, icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
           ),
           Expanded(
               child: Padding(

@@ -14,6 +14,7 @@ class IconConst{
   static final SvgPicture plusbutton = SvgPicture.asset('assets/icons/PlusButton.svg');
   static final SvgPicture minusbutton = SvgPicture.asset('assets/icons/MinusButton.svg');
   static final SvgPicture sort = SvgPicture.asset('assets/icons/Sort.svg');
+  static final SvgPicture sortwhite = SvgPicture.asset('assets/icons/Sort.svg', color: ColorConst.white,);
   static final SvgPicture message = SvgPicture.asset('assets/icons/messagee.svg');
   static final SvgPicture heart = SvgPicture.asset('assets/icons/Heart.svg');
   static final SvgPicture clock = SvgPicture.asset('assets/icons/Clock.svg');
@@ -25,6 +26,7 @@ class IconConst{
   static final Icon done = Icon(Icons.done, color: ColorConst.white);
 
   static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
+  static final SvgPicture notificationwhite = SvgPicture.asset('assets/icons/Union.svg', color: ColorConst.white,);
   static final SvgPicture settings = SvgPicture.asset('assets/icons/Settings.svg');
   static final SvgPicture creditcard = SvgPicture.asset('assets/icons/CreditCard.svg');
   static final SvgPicture paypal = SvgPicture.asset('assets/icons/Paypal.svg');
@@ -34,14 +36,19 @@ class IconConst{
 
   //arrows
   static final SvgPicture downarrow = SvgPicture.asset('assets/icons/DownArrow.svg');
+  static final SvgPicture downarrowwhite = SvgPicture.asset('assets/icons/DownArrow.svg', color: ColorConst.white,);
   static final SvgPicture leftarrow = SvgPicture.asset('assets/icons/leftarrow.svg');
+  static final SvgPicture leftarrowwhite = SvgPicture.asset('assets/icons/leftarrow.svg', color: ColorConst.white,);
   static final SvgPicture rightarrow = SvgPicture.asset('assets/icons/RightArrow.svg', color: ColorConst.mainColor,);
+  static final SvgPicture rightarrowwhite = SvgPicture.asset('assets/icons/RightArrow.svg', color: ColorConst.white,);
 
   // home
   static final SvgPicture home = SvgPicture.asset('assets/icons/Home.svg');
   static final SvgPicture homewhite = SvgPicture.asset('assets/icons/Home.svg', color: ColorConst.white,);
   static final SvgPicture explore = SvgPicture.asset('assets/icons/Search.svg');
+  static final SvgPicture explorewhite = SvgPicture.asset('assets/icons/Search.svg', color: ColorConst.white,);
   static final SvgPicture cart = SvgPicture.asset('assets/icons/Cart.svg');
+  static final SvgPicture cartwhite = SvgPicture.asset('assets/icons/Cart.svg',color: ColorConst.white,);
   static final SvgPicture profile = SvgPicture.asset('assets/icons/Profile.svg');
 
   // profile

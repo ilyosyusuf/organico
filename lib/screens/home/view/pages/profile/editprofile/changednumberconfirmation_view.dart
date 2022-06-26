@@ -38,7 +38,7 @@ class ChangedNumberConfirmationView extends StatelessWidget {
                   onPressed: () {
                     NavigationService.instance.pop("");
                   },
-                  icon: IconConst.leftarrow),
+                  icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
             ),
             SizedBox(height: context.h * 0.05),
             const Padding(

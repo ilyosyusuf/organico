@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/icons/icon_const.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/view/pages/profile/orders/history_view.dart';
 import 'package:organico/screens/home/view/pages/profile/orders/ongoing_view.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
@@ -41,7 +42,7 @@ class _MyOrdersViewState extends State<MyOrdersView>
               onPressed: () {
                 NavigationService.instance.pop("");
               },
-              icon: IconConst.leftarrow),
+              icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
         ),
         MyTabbar(),
         Expanded(

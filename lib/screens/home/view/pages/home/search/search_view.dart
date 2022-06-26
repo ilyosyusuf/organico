@@ -37,7 +37,7 @@ class SearchView extends StatelessWidget {
                         onPressed: () {
                           NavigationService.instance.pop("");
                         },
-                        icon: IconConst.leftarrow),
+                        icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
                     const Spacer(),
                     SizedBox(
                       width: forcontext.w * 0.75,
@@ -72,7 +72,7 @@ class SearchView extends StatelessWidget {
                             itemBuilder: (context, i) {
                               return ListTile(
                                 trailing: IconConst.xIcon,
-                                leading: IconConst.explore,
+                                leading: HomeCubit.isDark ? IconConst.explorewhite : IconConst.explore,
                                 title: Text(
                                   forcontext
                                       .watch<HomeCubit>()

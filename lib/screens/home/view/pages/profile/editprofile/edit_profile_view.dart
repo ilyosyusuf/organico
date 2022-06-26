@@ -40,7 +40,7 @@ class EditProfileView extends StatelessWidget {
                 leading:
                     IconButton(onPressed: () {
                       NavigationService.instance.pop("");
-                    }, icon: IconConst.leftarrow),
+                    }, icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
               ),
               SizedBox(height: context.h * 0.01),
               SizedBox(

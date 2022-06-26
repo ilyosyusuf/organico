@@ -33,11 +33,11 @@ class CategoryDetailsView extends StatelessWidget {
                   onPressed: () {
                     NavigationService.instance.pop("");
                   },
-                  icon: IconConst.leftarrow),
+                  icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
                   trailing: IconButton(
                   onPressed: () {
                   },
-                  icon: IconConst.sort),
+                  icon: HomeCubit.isDark ? IconConst.sortwhite : IconConst.sort,),
                   ),
           Expanded(
               child: Padding(

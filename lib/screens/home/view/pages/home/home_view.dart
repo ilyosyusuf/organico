@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text("Bandun, Cimahi", style: FStyles.headline4sbold),
-                IconConst.downarrow,
+                HomeCubit.isDark ? IconConst.downarrowwhite : IconConst.downarrow,
               ],
             ),
             SizedBox(height: context.h * 0.02),

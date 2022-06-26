@@ -7,6 +7,7 @@ import 'package:organico/core/extensions/context_extension.dart';
 import 'package:organico/core/font/font_style.dart';
 import 'package:organico/screens/authentication/cubit/auth_cubit.dart';
 import 'package:organico/screens/authentication/state/auth_state.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/widgets/apbar/app_bar_widget.dart';
 import 'package:organico/widgets/buttons/elevated_button.dart';
 import 'package:organico/widgets/textform/intl_phone_field_widget.dart';
@@ -32,7 +33,7 @@ class PhoneVerificationView extends StatelessWidget {
               text: "Phone Verification",
                             leading: IconButton(onPressed: (){
                 dataFonction.changeState(SignInState());
-              }, icon: IconConst.leftarrow),
+              }, icon: HomeCubit.isDark ? IconConst.leftarrowwhite : IconConst.leftarrow,),
             ),
             SingleChildScrollView(
               child: Padding(

@@ -29,7 +29,7 @@ class ProfileView extends StatelessWidget {
                       NavigationService.instance
                           .pushNamed(routeName: '/notificationview');
                     },
-                    icon: IconConst.notification)),
+                    icon: HomeCubit.isDark ? IconConst.notificationwhite : IconConst.notification,)),
             SizedBox(height: context.h * 0.01),
             const CircleAvatar(
               radius: 70,
