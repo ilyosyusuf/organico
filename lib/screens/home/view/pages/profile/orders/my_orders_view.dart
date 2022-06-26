@@ -10,6 +10,7 @@ import 'package:organico/widgets/apbar/app_bar_widget.dart';
 
 class MyOrdersView extends StatefulWidget {
   final BuildContext forcontext;
+
   const MyOrdersView({Key? key, required this.forcontext}) : super(key: key);
 
   @override
@@ -22,14 +23,13 @@ class _MyOrdersViewState extends State<MyOrdersView>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
-  Widget build(BuildContext forcontext) {
-    return myOrderScaffold(forcontext);
+  Widget build(BuildContext context) {
+    return myOrderScaffold(widget.forcontext);
   }
 
   Scaffold myOrderScaffold(BuildContext context) {

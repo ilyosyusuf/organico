@@ -52,7 +52,7 @@ class OrderStatusView extends StatelessWidget {
                     BorderedContainerWidget(containerChild: ProfileListTileWidget(
                           title: "Completed",
                           subtitle: const Text("10:25 AM"),
-                          trailing: IconConst.rightarrow), ),
+                          trailing: IconConst.rightarrow)),
                     SizedBox(height: context.h * 0.03),
                     Text("Overview", style: FStyles.headline4sbold),
                     SizedBox(height: context.h * 0.02),
