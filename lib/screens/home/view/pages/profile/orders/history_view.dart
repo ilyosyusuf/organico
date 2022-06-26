@@ -40,9 +40,9 @@ class HistoryView extends StatelessWidget {
                   SizedBox(
                       height: forcontext.h * 0.10,
                       child: OrdersListViewWidget(
-                          imageData: cubitData.categoriesList,
+                          imageData: cubitData.orderhistoryList,
                           colorData: cubitData.colorList,
-                          itemCount: cubitData.categoriesList.length)),
+                          itemCount: cubitData.orderhistoryList.length)),
                   Padding(
                     padding: PMconst.small,
                     child: Row(
@@ -64,14 +64,14 @@ class HistoryView extends StatelessWidget {
               containerChild: Column(
                 children: [
                   ProfileListTileWidget(
-                      title: "Popey Shop - New York",
+                      title: "Carte Shop - New York",
                       trailing: Text("Canceled", style: FStyles.headline5main)),
                   SizedBox(
                       height: forcontext.h * 0.10,
                       child: OrdersListViewWidget(
-                          imageData: cubitData.categoriesList,
+                          imageData: cubitData.orderhistoryList,
                           colorData: cubitData.colorList,
-                          itemCount: cubitData.categoriesList.length)),
+                          itemCount: cubitData.orderhistoryList.length)),
                   Padding(
                     padding: PMconst.small,
                     child: Row(
@@ -81,7 +81,9 @@ class HistoryView extends StatelessWidget {
                         ElevatedButtonWidget(
                             width: context.w * 0.5,
                             child: Text("Order again"),
-                            onPressed: () {})
+                            onPressed: () {
+                              
+                            })
                       ],
                     ),
                   ),

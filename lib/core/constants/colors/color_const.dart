@@ -16,5 +16,6 @@ class ColorConst {
   static Color whitePink = Color(0XFFFDF1DB);
   static Color blackPink = Color(0XFFEFD9DD);
   static Color whiteGreen = Color(0XFFEAF3DE);
+  static Color  grey = Colors.grey;
 
 }

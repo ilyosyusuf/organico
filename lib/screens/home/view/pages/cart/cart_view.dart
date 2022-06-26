@@ -110,7 +110,7 @@ class CartView extends StatelessWidget {
                 height: context.h * 0.06,
                 child: const Text("Add to bag"),
                 onPressed: () {
-                  NavigationService.instance.pushNamed(routeName: '/orderstatusview', args: context);
+                  NavigationService.instance.pushNamed(routeName: '/bagview', args: context);
                 })
           ],
         ),

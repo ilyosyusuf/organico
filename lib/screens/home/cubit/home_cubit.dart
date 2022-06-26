@@ -155,6 +155,19 @@ class HomeCubit extends Cubit<MainHomeState> {
     "Please check the product before packaging.",
   ];
 
+
+  // List for categories in orderstatusview
+  List orderstatusongoingList = [
+    'assets/images/broccoli.png',
+    'assets/images/carrot.png',
+  ];
+
+    List orderhistoryList = [
+    'assets/images/paprika.png',
+    'assets/images/banana.png',
+    'assets/images/broccoli.png',
+  ];
+
   // List for total in order status view
   List totalNames = [
     "Subtotal",
@@ -168,5 +181,16 @@ class HomeCubit extends Cubit<MainHomeState> {
     "\$1",
     "-\$1",
     "\$9.98",
+  ];
+
+  // Lists for My Bag View
+  List<String> baginfo = ['Subtotal', 'Delivery charge', 'Coupon', 'Total'];
+
+  List<String> baginfoprice = [
+      '9.98',
+      '1',
+      '-1',
+      '9.98'
+    ''
   ];
 }

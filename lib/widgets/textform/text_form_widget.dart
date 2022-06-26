@@ -7,7 +7,7 @@ class MyTextField {
   static textField({
     required String text,
     IconButton? suffixIcon,
-    required TextEditingController controller,
+    TextEditingController? controller,
     IconButton? prefixIcon,
     bool read = false,
     var onChanged,

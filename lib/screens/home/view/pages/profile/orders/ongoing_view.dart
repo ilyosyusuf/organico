@@ -23,25 +23,7 @@ class OnGoingView extends StatelessWidget {
   }
 
   Container ongoingContainer(BuildContext context) {
-    // var data = ProductDataService.instance.productList;
     var cubitData = forcontext.watch<HomeCubit>();
-
-    // List colorList = [
-    //   ColorConst.whiteGreen,
-    //   ColorConst.whitePink,
-    //   ColorConst.whiteYellow,
-    //   ColorConst.blackPink,
-    //   ColorConst.whiteGreen,
-    //   ColorConst.whitePink,
-    //   ColorConst.whiteYellow,
-    //   ColorConst.blackPink
-    // ];
-
-    // List categoriesList = [
-    //   'assets/images/broccoli.png',
-    //   'assets/images/carrot.png',
-    // ];
-
     return Container(
       child: Padding(
         padding: PMconst.small,
@@ -57,9 +39,9 @@ class OnGoingView extends StatelessWidget {
                   SizedBox(
                       height: forcontext.h * 0.10,
                       child: OrdersListViewWidget(
-                          imageData: cubitData.categoriesList,
+                          imageData: cubitData.orderstatusongoingList,
                           colorData: cubitData.colorList,
-                          itemCount: cubitData.categoriesList.length)),
+                          itemCount: cubitData.orderstatusongoingList.length)),
                   Padding(
                     padding: PMconst.small,
                     child: Row(
