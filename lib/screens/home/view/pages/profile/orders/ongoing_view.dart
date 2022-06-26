@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:organico/config/init/navigation/navigator.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 import 'package:organico/core/constants/pmconst/pm_const.dart';
 import 'package:organico/core/extensions/context_extension.dart';
@@ -51,7 +52,9 @@ class OnGoingView extends StatelessWidget {
                         ElevatedButtonWidget(
                             width: context.w * 0.5,
                             child: Text("Details"),
-                            onPressed: () {})
+                            onPressed: () {
+                              NavigationService.instance.pushNamed(routeName: '/orderstatusdetailsview', args: forcontext);
+                            })
                       ],
                     ),
                   ),

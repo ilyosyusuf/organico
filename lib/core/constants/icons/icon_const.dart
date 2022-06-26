@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:organico/core/constants/colors/color_const.dart';
 
@@ -21,6 +22,7 @@ class IconConst{
   static final SvgPicture pinlocation = SvgPicture.asset('assets/icons/PinLocation.svg');
   static final SvgPicture location = SvgPicture.asset('assets/icons/Location.svg');
   static final SvgPicture pen = SvgPicture.asset('assets/icons/pen.svg');
+  static final Icon done = Icon(Icons.done, color: ColorConst.white);
 
   static final SvgPicture notification = SvgPicture.asset('assets/icons/Union.svg');
   static final SvgPicture settings = SvgPicture.asset('assets/icons/Settings.svg');

@@ -193,4 +193,26 @@ class HomeCubit extends Cubit<MainHomeState> {
       '9.98'
     ''
   ];
+
+  List<String> orderStatusTitles = [
+    'Order Completed',
+    'On Delivery',
+    'Order Confirmed',
+    'Order Received',
+  ];
+
+
+  List<String> orderStatusSubTitles = [
+    '--:--',
+    '10:10 AM',
+    '9:55 AM',
+    '9:50 AM',
+  ];
+
+  static bool isDark = false;
+
+  void changeTheme(MainHomeState state){
+      isDark = !isDark;
+      emit(state);
+  }
 }
